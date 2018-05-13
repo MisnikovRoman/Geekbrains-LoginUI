@@ -8,16 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginVC: UIViewController {
 
+    // MARK: - Variables
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - Main methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let defaults = UserDefaults.standard
+        defaults.bool(forKey: LOGGED_IN_KEY)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,11 +46,32 @@ class ViewController: UIViewController {
         
     }
     
+    // MARK: - @IBActiones
+    // to enable return from any VC
+    @IBAction func unwindToLoginVC (_ segue: UIStoryboardSegue) { }
+    
     @IBAction func loginBtnPressed(_ sender: Any) {
         usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+        
+        guard let username = usernameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        if (username == UserData.instance.validLogin && password == UserData.instance.validPassword) {
+            // if entered pair is valid
+            performSegue(withIdentifier: TABBAR_SEGUE, sender: nil)
+            UserData.instance.isLoggedIn = true
+        } else {
+            // show alert with error
+            let alert = UIAlertController(title: "Ошибка", message: "Пользователя с такой парой логин/пароль не существует", preferredStyle: .alert)
+            let actionOK = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alert.addAction(actionOK)
+            present(alert, animated: true, completion: nil)
+        }
+        
     }
     
+    // MARK: - Notifications handlers
     @objc func keyboardWasShown(notification: Notification) {
         // get keyboard size
         let info = notification.userInfo! as NSDictionary
