@@ -17,20 +17,20 @@ class UserData {
     public private(set) var validPassword = "admin"
     
     // database, where you store key-value pairs persistently across launches of your app
-    static let defaults = UserDefaults.standard
-    
-    var isLoggedIn = false
+    private let defaults = UserDefaults.standard
     
     // MARK: - User Defaults Database variables
-    static var isLoggedIn: Bool {
+    var isLoggedIn: Bool {
         get {
             // when someone calls instance.isLoggedIn we return data from data base
             return defaults.bool(forKey: LOGGED_IN_KEY)
         }
 
         set {
+            print("User \"admin\" status is: \(newValue)")
             // when someone wants to change logged status we write data to data base
             defaults.set(newValue, forKey: LOGGED_IN_KEY)
+            defaults.synchronize()
         }
     }
 }

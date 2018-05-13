@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGl-6d-bek">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +16,7 @@
         <!--LoginVC-->
         <scene sceneID="gLN-ZB-EC7">
             <objects>
-                <viewController id="pGl-6d-bek" customClass="LoginVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="pGl-6d-bek" customClass="LoginVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i8O-ju-iWD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,6 +302,18 @@
                                 <segue destination="ci7-Q9-ijc" kind="unwind" unwindAction="unwindToLoginVC:" id="gAP-00-Udl"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="true" id="BI1-E6-gcH">
+                                <connections>
+                                    <action selector="setLoggedIn:" destination="u7d-Yi-9fF" id="b7i-2O-aUx"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="false" id="4SG-sL-erW">
+                                <connections>
+                                    <action selector="setLoggedOut:" destination="u7d-Yi-9fF" id="enV-jY-Wfv"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4K-x1-2U8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="3060" y="-186"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabBarController-->
         <scene sceneID="hdO-KB-8wl">
             <objects>
-                <tabBarController id="xWc-dd-QAz" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="TabBarController" id="xWc-dd-QAz" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N4v-IW-UCH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -330,7 +343,7 @@
         <!--Table-->
         <scene sceneID="zjH-8Y-4ot">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aHq-RO-569" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavControllerTableVC" automaticallyAdjustsScrollViewInsets="NO" id="aHq-RO-569" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table" image="Icon1" selectedImage="Icon1" id="sWP-qR-Xze"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hoK-Yn-7pq">

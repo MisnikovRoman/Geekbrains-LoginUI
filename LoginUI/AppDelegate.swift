@@ -17,7 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var initialViewController: UIViewController
+        
+        // switch between initial view controllers
+        if UserData.instance.isLoggedIn {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: STORYBOARD_TABBARCONTROLLER)
+        } else {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: STORYBOARD_LOGGEDIN)
+        }
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
         
         return true
     }

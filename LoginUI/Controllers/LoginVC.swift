@@ -58,9 +58,11 @@ class LoginVC: UIViewController {
         guard let password = passwordTextField.text else { return }
         
         if (username == UserData.instance.validLogin && password == UserData.instance.validPassword) {
+            
+            UserData.instance.isLoggedIn = true
+            
             // if entered pair is valid
             performSegue(withIdentifier: TABBAR_SEGUE, sender: nil)
-            UserData.instance.isLoggedIn = true
         } else {
             // show alert with error
             let alert = UIAlertController(title: "Ошибка", message: "Пользователя с такой парой логин/пароль не существует", preferredStyle: .alert)

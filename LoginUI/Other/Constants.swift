@@ -14,3 +14,7 @@ let UNWIND_TO_LOGIN = "BackToLoginVC"
 
 // user date constants
 let LOGGED_IN_KEY = "loggedIn"
+
+// storyboard constants
+let STORYBOARD_TABBARCONTROLLER = "TabBarController"
+let STORYBOARD_LOGGEDIN = "LoginVC"

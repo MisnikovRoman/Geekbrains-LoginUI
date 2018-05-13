@@ -26,7 +26,17 @@ class FirstTableVC: UITableViewController {
     }
     
     @IBAction func backToLoginVC(_ sender: Any) {
-        UserData.isLoggedIn = false
+        UserData.instance.isLoggedIn = false
+    }
+    
+    @IBAction func setLoggedIn(_ sender: Any) {
+        UserData.instance.isLoggedIn = true
+        print("Logged: \(UserData.instance.isLoggedIn)")
+    }
+    
+    @IBAction func setLoggedOut(_ sender: Any) {
+        UserData.instance.isLoggedIn = false
+        print("Logged: \(UserData.instance.isLoggedIn)")
     }
     
 }
