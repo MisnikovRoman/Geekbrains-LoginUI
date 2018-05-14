@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -247,32 +246,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEe-Eu-fFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="148"/>
+            <point key="canvasLocation" x="482" y="148"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="Bdk-fm-bp7">
-            <objects>
-                <viewController id="v1t-ud-YB3" customClass="TestVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FT2-1c-dWx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yx-G8-x1Y">
-                                <rect key="frame" x="171" y="318" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OUT"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="vBr-eH-4Nu"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="1Bj-Tr-RjG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9cS-Ex-KRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2121" y="-931"/>
-        </scene>
-        <!--Table-->
+        <!--Table 1-->
         <scene sceneID="nbJ-yj-ilP">
             <objects>
                 <tableViewController id="u7d-Yi-9fF" customClass="FirstTableVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,25 +271,28 @@
                             <outlet property="delegate" destination="u7d-Yi-9fF" id="Jss-Cw-zcj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Table" id="b7d-pY-16x">
+                    <navigationItem key="navigationItem" title="Table 1" id="b7d-pY-16x">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Pa4-0o-Qjj">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                    <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="backToLoginVC:" destination="u7d-Yi-9fF" id="moG-p6-JFJ"/>
-                                <segue destination="ci7-Q9-ijc" kind="unwind" unwindAction="unwindToLoginVC:" id="gAP-00-Udl"/>
+                                <segue destination="ci7-Q9-ijc" kind="unwind" unwindAction="unwindToLoginVC:" id="51v-YT-f4f"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="true" id="BI1-E6-gcH">
-                                <connections>
-                                    <action selector="setLoggedIn:" destination="u7d-Yi-9fF" id="b7i-2O-aUx"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="false" id="4SG-sL-erW">
-                                <connections>
-                                    <action selector="setLoggedOut:" destination="u7d-Yi-9fF" id="enV-jY-Wfv"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Collection" id="PoG-Wp-AtX">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                    <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <segue destination="R2V-Q5-bFa" kind="show" id="jpZ-tT-h6p"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4K-x1-2U8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,16 +308,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="aHq-RO-569" kind="relationship" relationship="viewControllers" id="oOJ-Mr-Of1"/>
                         <segue destination="SGB-ZW-zKA" kind="relationship" relationship="viewControllers" id="ocO-UJ-6fd"/>
-                        <segue destination="v1t-ud-YB3" kind="relationship" relationship="viewControllers" id="1L8-bh-M8a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3X-VZ-TNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="148"/>
+            <point key="canvasLocation" x="1337" y="148"/>
         </scene>
         <!--Table-->
         <scene sceneID="zjH-8Y-4ot">
@@ -351,6 +337,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backBtnColor">
+                            <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="u7d-Yi-9fF" kind="relationship" relationship="rootViewController" id="oZU-0b-uZs"/>
                     </connections>
@@ -370,13 +361,98 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backBtnColor">
+                            <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="R2V-Q5-bFa" kind="relationship" relationship="rootViewController" id="qhh-SY-ENq"/>
+                        <segue destination="p0M-bj-G4l" kind="relationship" relationship="rootViewController" id="Dmi-Gl-9z6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGk-Ka-iPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2120.8000000000002" y="480.80959520239884"/>
+        </scene>
+        <!--Table 2-->
+        <scene sceneID="AcJ-GD-dXM">
+            <objects>
+                <tableViewController id="p0M-bj-G4l" customClass="SecondTableVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5ZQ-rX-tc0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iXP-Fv-rqA">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iXP-Fv-rqA" id="rWl-mN-KBf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p0M-bj-G4l" id="ByA-hI-yFq"/>
+                            <outlet property="delegate" destination="p0M-bj-G4l" id="6sq-3v-cy9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Table 2" id="SJU-g0-b1G">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Ehb-OY-bnJ">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                    <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="backToLoginVC:" destination="u7d-Yi-9fF" id="HW6-BM-C7q"/>
+                                <segue destination="Y48-iO-pA2" kind="unwind" unwindAction="unwindToLoginVC:" id="NIe-zC-Zd7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Table 3" id="qD5-Bd-AL5">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="newColor">
+                                    <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <segue destination="CqT-HB-R7d" kind="show" id="JZb-lh-Q0H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiR-2y-Csx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Y48-iO-pA2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3060" y="481"/>
+        </scene>
+        <!--Table 3-->
+        <scene sceneID="kmA-fL-JH2">
+            <objects>
+                <tableViewController title="Table 3" id="CqT-HB-R7d" customClass="ThirdTableVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0eo-k4-wlE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HRx-yR-DkW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HRx-yR-DkW" id="Y8t-xP-yJ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CqT-HB-R7d" id="0au-5N-Sj3"/>
+                            <outlet property="delegate" destination="CqT-HB-R7d" id="ya5-S6-Lxq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4u-gn-pvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3988" y="481"/>
         </scene>
         <!--Collection-->
         <scene sceneID="nH0-vY-sTW">
@@ -407,11 +483,17 @@
                             <outlet property="delegate" destination="R2V-Q5-bFa" id="xsB-Ie-Q8h"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Collection" id="f5d-dv-M6V"/>
+                    <navigationItem key="navigationItem" title="Collection" id="f5d-dv-M6V">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="backBtnColor">
+                                <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROy-nv-hy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="481"/>
+            <point key="canvasLocation" x="3988" y="-187"/>
         </scene>
     </scenes>
     <resources>

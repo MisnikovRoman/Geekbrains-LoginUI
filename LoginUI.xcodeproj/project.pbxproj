@@ -17,7 +17,10 @@
 		C87D212B20A5904B00C5A830 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87D212A20A5904B00C5A830 /* UserData.swift */; };
 		C89AAFCE20A5A47300E3BC93 /* FirstTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCD20A5A47300E3BC93 /* FirstTableVC.swift */; };
 		C89AAFD020A5A48A00E3BC93 /* FirstCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCF20A5A48A00E3BC93 /* FirstCollectionVC.swift */; };
-		C89AAFD220A5A73300E3BC93 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFD120A5A73300E3BC93 /* TestVC.swift */; };
+		C8C810C120A983F100145B83 /* SecondTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C020A983F100145B83 /* SecondTableVC.swift */; };
+		C8C810C320A9841100145B83 /* ThirdTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C220A9841100145B83 /* ThirdTableVC.swift */; };
+		C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */; };
+		C8C810CF20A99ABE00145B83 /* UINavigationItem-backTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CE20A99ABE00145B83 /* UINavigationItem-backTintColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,10 @@
 		C87D212A20A5904B00C5A830 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		C89AAFCD20A5A47300E3BC93 /* FirstTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableVC.swift; sourceTree = "<group>"; };
 		C89AAFCF20A5A48A00E3BC93 /* FirstCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionVC.swift; sourceTree = "<group>"; };
-		C89AAFD120A5A73300E3BC93 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		C8C810C020A983F100145B83 /* SecondTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableVC.swift; sourceTree = "<group>"; };
+		C8C810C220A9841100145B83 /* ThirdTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableVC.swift; sourceTree = "<group>"; };
+		C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-tintColor.swift"; sourceTree = "<group>"; };
+		C8C810CE20A99ABE00145B83 /* UINavigationItem-backTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem-backTintColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				C800615820A1E17100CCA6B3 /* UIView-CornerRadius.swift */,
+				C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */,
+				C8C810CE20A99ABE00145B83 /* UINavigationItem-backTintColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -92,7 +100,8 @@
 				C84B9A2020A0DF15003D01A9 /* LoginVC.swift */,
 				C89AAFCD20A5A47300E3BC93 /* FirstTableVC.swift */,
 				C89AAFCF20A5A48A00E3BC93 /* FirstCollectionVC.swift */,
-				C89AAFD120A5A73300E3BC93 /* TestVC.swift */,
+				C8C810C020A983F100145B83 /* SecondTableVC.swift */,
+				C8C810C220A9841100145B83 /* ThirdTableVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,14 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C89AAFD220A5A73300E3BC93 /* TestVC.swift in Sources */,
 				C84B9A2120A0DF15003D01A9 /* LoginVC.swift in Sources */,
 				C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */,
 				C89AAFCE20A5A47300E3BC93 /* FirstTableVC.swift in Sources */,
+				C8C810C120A983F100145B83 /* SecondTableVC.swift in Sources */,
 				C89AAFD020A5A48A00E3BC93 /* FirstCollectionVC.swift in Sources */,
+				C8C810C320A9841100145B83 /* ThirdTableVC.swift in Sources */,
 				C84B9A1F20A0DF15003D01A9 /* AppDelegate.swift in Sources */,
 				C87D212B20A5904B00C5A830 /* UserData.swift in Sources */,
 				C87D212920A58FF800C5A830 /* Constants.swift in Sources */,
+				C8C810CF20A99ABE00145B83 /* UINavigationItem-backTintColor.swift in Sources */,
+				C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
