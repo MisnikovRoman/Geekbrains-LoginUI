@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -490,19 +491,60 @@
         <!--Search groups-->
         <scene sceneID="kmA-fL-JH2">
             <objects>
-                <tableViewController title="Search groups" id="CqT-HB-R7d" customClass="ThirdTableVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Search groups" id="CqT-HB-R7d" customClass="SearchGroupsTableVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0eo-k4-wlE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HRx-yR-DkW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchGroupCell" id="HRx-yR-DkW" customClass="SearchGroupCell" customModule="LoginUI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HRx-yR-DkW" id="Y8t-xP-yJ3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-man" translatesAutoresizingMaskIntoConstraints="NO" id="D2b-J4-U4U">
+                                            <rect key="frame" x="16" y="5" width="33" height="33"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="VDs-34-U69"/>
+                                                <constraint firstAttribute="width" constant="33" id="sLY-mj-C0b"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настоящий Лентач" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izi-l5-zwe">
+                                            <rect key="frame" x="65" y="11" width="152" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ys-Ua-UoC">
+                                            <rect key="frame" x="341" y="11" width="18" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Izi-l5-zwe" firstAttribute="leading" secondItem="D2b-J4-U4U" secondAttribute="trailing" constant="16" id="53p-FL-Brg"/>
+                                        <constraint firstItem="D2b-J4-U4U" firstAttribute="leading" secondItem="Y8t-xP-yJ3" secondAttribute="leading" constant="16" id="7wF-Og-lui"/>
+                                        <constraint firstItem="D2b-J4-U4U" firstAttribute="centerY" secondItem="Y8t-xP-yJ3" secondAttribute="centerY" id="K0E-oT-p0e"/>
+                                        <constraint firstItem="Izi-l5-zwe" firstAttribute="centerY" secondItem="Y8t-xP-yJ3" secondAttribute="centerY" id="NwW-5G-yId"/>
+                                        <constraint firstItem="7Ys-Ua-UoC" firstAttribute="trailing" secondItem="Y8t-xP-yJ3" secondAttribute="trailingMargin" id="PrJ-j0-aAh"/>
+                                        <constraint firstItem="7Ys-Ua-UoC" firstAttribute="centerY" secondItem="Y8t-xP-yJ3" secondAttribute="centerY" id="V6O-NA-c23"/>
+                                        <constraint firstItem="Izi-l5-zwe" firstAttribute="leading" secondItem="D2b-J4-U4U" secondAttribute="trailing" constant="16" id="VRj-Dy-VY0"/>
+                                        <constraint firstItem="Izi-l5-zwe" firstAttribute="leading" secondItem="D2b-J4-U4U" secondAttribute="trailing" constant="16" id="pWQ-93-uQF"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="D2b-J4-U4U" id="EO7-D6-a1e"/>
+                                    <outlet property="nameLbl" destination="Izi-l5-zwe" id="I3Z-Jh-Xf4"/>
+                                    <outlet property="numberOfPeopleLbl" destination="7Ys-Ua-UoC" id="Sjh-uQ-feE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -510,6 +552,13 @@
                             <outlet property="delegate" destination="CqT-HB-R7d" id="ya5-S6-Lxq"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="lBb-mM-dVy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gSu-U8-haU">
+                            <connections>
+                                <action selector="addNewItem:" destination="CqT-HB-R7d" id="qjD-U5-xIa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4u-gn-pvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

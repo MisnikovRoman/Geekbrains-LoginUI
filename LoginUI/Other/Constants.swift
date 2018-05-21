@@ -19,7 +19,8 @@ let LOGGED_IN_KEY = "loggedIn"
 let STORYBOARD_TABBARCONTROLLER = "TabBarController"
 let STORYBOARD_LOGGEDIN = "LoginVC"
 
-// cell
+// cell constants
 let CELL_FRIEND = "FriendCellIdentifier"
 let CELL_FRIEND_2 = "Friend2CellIdentifier"
 let CELL_GROUP = "GroupCellIdentifier"
+let CELL_SEARCH_GROUP = "SearchGroupCell"
