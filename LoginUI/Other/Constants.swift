@@ -11,6 +11,7 @@ import Foundation
 // segues constants
 let TABBAR_SEGUE = "TabBarSegue"
 let UNWIND_TO_LOGIN = "BackToLoginVC"
+let UNWIND_TO_GROUPES = "BackToGroups"
 
 // user date constants
 let LOGGED_IN_KEY = "loggedIn"

@@ -28,24 +28,10 @@ class SearchGroupsTableVC: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-   
-            // delete item from data source
-            let deleteItemName = SearchGroupData.getGroupes()[indexPath.row]
-            do { try SearchGroupData.deleteGroup(named: deleteItemName) }
-            catch SearchGroupData.GroupErrors.notExisting { print("no such item to delete") }
-            catch let error { print(error) }
-            
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        // add new group to groups list
+//        let nameOfItemToAdd = SearchGroupData.getGroupes()[indexPath.row]
+//        GroupsData.add(named: nameOfItemToAdd, imageName: "test")
     }
-    
-    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
-        SearchGroupData.addGroup(name: "test")
-        tableView.reloadData()
-    }
-    
 }

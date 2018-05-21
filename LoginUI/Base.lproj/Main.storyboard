@@ -471,7 +471,7 @@
                                 <segue destination="Y48-iO-pA2" kind="unwind" unwindAction="unwindToLoginVC:" id="NIe-zC-Zd7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="qD5-Bd-AL5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qD5-Bd-AL5">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                     <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -544,6 +544,7 @@
                                     <outlet property="avatarImageView" destination="D2b-J4-U4U" id="EO7-D6-a1e"/>
                                     <outlet property="nameLbl" destination="Izi-l5-zwe" id="I3Z-Jh-Xf4"/>
                                     <outlet property="numberOfPeopleLbl" destination="7Ys-Ua-UoC" id="Sjh-uQ-feE"/>
+                                    <segue destination="jQy-6K-Cb1" kind="unwind" identifier="BackToGroups" unwindAction="unwindFromSearchGroups:" id="Xxj-ab-4df"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -552,15 +553,10 @@
                             <outlet property="delegate" destination="CqT-HB-R7d" id="ya5-S6-Lxq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search" id="lBb-mM-dVy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gSu-U8-haU">
-                            <connections>
-                                <action selector="addNewItem:" destination="CqT-HB-R7d" id="qjD-U5-xIa"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Search" id="lBb-mM-dVy"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4u-gn-pvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jQy-6K-Cb1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3988" y="481"/>
         </scene>
