@@ -13,7 +13,6 @@ class FriendsTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,7 +27,13 @@ class FriendsTableVC: UITableViewController {
     
     @IBAction func backToLoginVC(_ sender: Any) {
         print("-> Try to move back")
+        
+//        switchRootViewController(rootViewController: LoginVC, animated: true) {
+//            print("-> Successfully changed root VC to LoginVC")
+//        }
+        
         UserData.instance.isLoggedIn = false
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,5 +43,8 @@ class FriendsTableVC: UITableViewController {
         
         return cell
     }
+    
+    
+
     
 }
