@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class FirstCollectionVC: UICollectionViewController {
+class FriendsCollectionVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,21 +42,21 @@ class FirstCollectionVC: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        
+        return FriendsData.getFriendsData().count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_FRIEND_2, for: indexPath) as! FriendsSecondTypeCell
+        
         // Configure the cell
-    
+        cell.avatarImageView.image = #imageLiteral(resourceName: "avatar-man")
+        
         return cell
     }
 

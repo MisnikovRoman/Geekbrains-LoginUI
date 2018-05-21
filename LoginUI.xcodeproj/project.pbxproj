@@ -13,11 +13,16 @@
 		C84B9A2420A0DF15003D01A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2220A0DF15003D01A9 /* Main.storyboard */; };
 		C84B9A2620A0DF16003D01A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2520A0DF16003D01A9 /* Assets.xcassets */; };
 		C84B9A2920A0DF16003D01A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2720A0DF16003D01A9 /* LaunchScreen.storyboard */; };
+		C850CE2420B2B57C00418D9E /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850CE2320B2B57C00418D9E /* FriendCell.swift */; };
+		C850CE2720B2B80300418D9E /* FriendsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850CE2620B2B80300418D9E /* FriendsData.swift */; };
+		C850CE2B20B2BC6D00418D9E /* FriendsSecondTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850CE2A20B2BC6D00418D9E /* FriendsSecondTypeCell.swift */; };
+		C850CE2D20B2BE6900418D9E /* GroupsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850CE2C20B2BE6900418D9E /* GroupsData.swift */; };
+		C850CE2F20B2BFBA00418D9E /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850CE2E20B2BFBA00418D9E /* GroupCell.swift */; };
 		C87D212920A58FF800C5A830 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87D212820A58FF800C5A830 /* Constants.swift */; };
 		C87D212B20A5904B00C5A830 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87D212A20A5904B00C5A830 /* UserData.swift */; };
-		C89AAFCE20A5A47300E3BC93 /* FirstTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCD20A5A47300E3BC93 /* FirstTableVC.swift */; };
-		C89AAFD020A5A48A00E3BC93 /* FirstCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCF20A5A48A00E3BC93 /* FirstCollectionVC.swift */; };
-		C8C810C120A983F100145B83 /* SecondTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C020A983F100145B83 /* SecondTableVC.swift */; };
+		C89AAFCE20A5A47300E3BC93 /* FriendsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCD20A5A47300E3BC93 /* FriendsTableVC.swift */; };
+		C89AAFD020A5A48A00E3BC93 /* FriendsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCF20A5A48A00E3BC93 /* FriendsCollectionVC.swift */; };
+		C8C810C120A983F100145B83 /* GroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C020A983F100145B83 /* GroupsTableVC.swift */; };
 		C8C810C320A9841100145B83 /* ThirdTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C220A9841100145B83 /* ThirdTableVC.swift */; };
 		C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */; };
 		C8C810CF20A99ABE00145B83 /* UINavigationController-backTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */; };
@@ -32,11 +37,16 @@
 		C84B9A2520A0DF16003D01A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84B9A2820A0DF16003D01A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C84B9A2A20A0DF16003D01A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C850CE2320B2B57C00418D9E /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		C850CE2620B2B80300418D9E /* FriendsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsData.swift; sourceTree = "<group>"; };
+		C850CE2A20B2BC6D00418D9E /* FriendsSecondTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSecondTypeCell.swift; sourceTree = "<group>"; };
+		C850CE2C20B2BE6900418D9E /* GroupsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsData.swift; sourceTree = "<group>"; };
+		C850CE2E20B2BFBA00418D9E /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		C87D212820A58FF800C5A830 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C87D212A20A5904B00C5A830 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		C89AAFCD20A5A47300E3BC93 /* FirstTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableVC.swift; sourceTree = "<group>"; };
-		C89AAFCF20A5A48A00E3BC93 /* FirstCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionVC.swift; sourceTree = "<group>"; };
-		C8C810C020A983F100145B83 /* SecondTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableVC.swift; sourceTree = "<group>"; };
+		C89AAFCD20A5A47300E3BC93 /* FriendsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableVC.swift; sourceTree = "<group>"; };
+		C89AAFCF20A5A48A00E3BC93 /* FriendsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionVC.swift; sourceTree = "<group>"; };
+		C8C810C020A983F100145B83 /* GroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableVC.swift; sourceTree = "<group>"; };
 		C8C810C220A9841100145B83 /* ThirdTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableVC.swift; sourceTree = "<group>"; };
 		C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-tintColor.swift"; sourceTree = "<group>"; };
 		C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController-backTintColor.swift"; sourceTree = "<group>"; };
@@ -85,6 +95,8 @@
 				C84B9A1E20A0DF15003D01A9 /* AppDelegate.swift */,
 				C84B9A2220A0DF15003D01A9 /* Main.storyboard */,
 				C84B9A2720A0DF16003D01A9 /* LaunchScreen.storyboard */,
+				C850CE2520B2B7D300418D9E /* Model */,
+				C850CE2220B2B55B00418D9E /* Views */,
 				C87D212620A58FA600C5A830 /* Controllers */,
 				C800615720A1E12600CCA6B3 /* Extensions */,
 				C87D212720A58FE700C5A830 /* Other */,
@@ -94,13 +106,32 @@
 			path = LoginUI;
 			sourceTree = "<group>";
 		};
+		C850CE2220B2B55B00418D9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C850CE2320B2B57C00418D9E /* FriendCell.swift */,
+				C850CE2A20B2BC6D00418D9E /* FriendsSecondTypeCell.swift */,
+				C850CE2E20B2BFBA00418D9E /* GroupCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C850CE2520B2B7D300418D9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C850CE2620B2B80300418D9E /* FriendsData.swift */,
+				C850CE2C20B2BE6900418D9E /* GroupsData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C87D212620A58FA600C5A830 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				C84B9A2020A0DF15003D01A9 /* LoginVC.swift */,
-				C89AAFCD20A5A47300E3BC93 /* FirstTableVC.swift */,
-				C89AAFCF20A5A48A00E3BC93 /* FirstCollectionVC.swift */,
-				C8C810C020A983F100145B83 /* SecondTableVC.swift */,
+				C89AAFCD20A5A47300E3BC93 /* FriendsTableVC.swift */,
+				C89AAFCF20A5A48A00E3BC93 /* FriendsCollectionVC.swift */,
+				C8C810C020A983F100145B83 /* GroupsTableVC.swift */,
 				C8C810C220A9841100145B83 /* ThirdTableVC.swift */,
 			);
 			path = Controllers;
@@ -188,13 +219,18 @@
 			files = (
 				C84B9A2120A0DF15003D01A9 /* LoginVC.swift in Sources */,
 				C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */,
-				C89AAFCE20A5A47300E3BC93 /* FirstTableVC.swift in Sources */,
-				C8C810C120A983F100145B83 /* SecondTableVC.swift in Sources */,
-				C89AAFD020A5A48A00E3BC93 /* FirstCollectionVC.swift in Sources */,
+				C89AAFCE20A5A47300E3BC93 /* FriendsTableVC.swift in Sources */,
+				C850CE2720B2B80300418D9E /* FriendsData.swift in Sources */,
+				C8C810C120A983F100145B83 /* GroupsTableVC.swift in Sources */,
+				C89AAFD020A5A48A00E3BC93 /* FriendsCollectionVC.swift in Sources */,
 				C8C810C320A9841100145B83 /* ThirdTableVC.swift in Sources */,
+				C850CE2F20B2BFBA00418D9E /* GroupCell.swift in Sources */,
 				C84B9A1F20A0DF15003D01A9 /* AppDelegate.swift in Sources */,
+				C850CE2420B2B57C00418D9E /* FriendCell.swift in Sources */,
 				C87D212B20A5904B00C5A830 /* UserData.swift in Sources */,
 				C87D212920A58FF800C5A830 /* Constants.swift in Sources */,
+				C850CE2B20B2BC6D00418D9E /* FriendsSecondTypeCell.swift in Sources */,
+				C850CE2D20B2BE6900418D9E /* GroupsData.swift in Sources */,
 				C8C810CF20A99ABE00145B83 /* UINavigationController-backTintColor.swift in Sources */,
 				C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */,
 			);
