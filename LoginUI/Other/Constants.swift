@@ -25,3 +25,11 @@ let CELL_FRIEND = "FriendCellIdentifier"
 let CELL_FRIEND_2 = "Friend2CellIdentifier"
 let CELL_GROUP = "GroupCellIdentifier"
 let CELL_SEARCH_GROUP = "SearchGroupCell"
+
+// url constants
+let URL_VK_AUTH = "https://oauth.vk.com/authorize"      // url to authentification page
+let URL_VK_REDIRECT = "https://oauth.vk.com/blank.html" // where to go after authentification
+
+// other constants
+let CLIENT_ID = "123-456-789"   // VK app identification number
+let APP_SCOPE = "262150"        // Битовая маска настроек доступа приложения (https://vk.com/dev/permissions)
