@@ -8,6 +8,9 @@
 
 import Foundation
 
+// closure constants
+typealias loadDataComplitionHandler = (_ success: Bool)->()
+
 // segues constants
 let TABBAR_SEGUE = "TabBarSegue"
 let UNWIND_TO_LOGIN = "BackToLoginVC"
@@ -15,6 +18,7 @@ let UNWIND_TO_GROUPES = "BackToGroups"
 
 // user date constants
 let LOGGED_IN_KEY = "loggedIn"
+let AUTH_TOKEN = "authToken"
 
 // storyboard constants
 let STORYBOARD_TABBARCONTROLLER = "TabBarController"
@@ -29,7 +33,11 @@ let CELL_SEARCH_GROUP = "SearchGroupCell"
 // url constants
 let URL_VK_AUTH = "https://oauth.vk.com/authorize"      // url to authentification page
 let URL_VK_REDIRECT = "https://oauth.vk.com/blank.html" // where to go after authentification
+let URL_VK_API_BASE = "https://api.vk.com/method"
+
+// url parts constants
+let VK_GET_FRIENDS = "/friends.get"
 
 // other constants
-let CLIENT_ID = "123-456-789"   // VK app identification number
+let CLIENT_ID = "6491638"   // VK app identification number
 let APP_SCOPE = "262150"        // Битовая маска настроек доступа приложения (https://vk.com/dev/permissions)

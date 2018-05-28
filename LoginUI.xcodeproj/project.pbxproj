@@ -31,6 +31,7 @@
 		C8C810C320A9841100145B83 /* SearchGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C220A9841100145B83 /* SearchGroupsTableVC.swift */; };
 		C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */; };
 		C8C810CF20A99ABE00145B83 /* UINavigationController-backTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */; };
+		C8CB2F4120BC340800DB9E96 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CB2F4020BC340800DB9E96 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		C8C810C220A9841100145B83 /* SearchGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroupsTableVC.swift; sourceTree = "<group>"; };
 		C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-tintColor.swift"; sourceTree = "<group>"; };
 		C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController-backTintColor.swift"; sourceTree = "<group>"; };
+		C8CB2F4020BC340800DB9E96 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				C850CE2220B2B55B00418D9E /* Views */,
 				C87D212620A58FA600C5A830 /* Controllers */,
 				C800615720A1E12600CCA6B3 /* Extensions */,
+				C8CB2F3F20BC33EF00DB9E96 /* Services */,
 				C87D212720A58FE700C5A830 /* Other */,
 				C84B9A2520A0DF16003D01A9 /* Assets.xcassets */,
 				C84B9A2A20A0DF16003D01A9 /* Info.plist */,
@@ -180,6 +183,14 @@
 				C87D212820A58FF800C5A830 /* Constants.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		C8CB2F3F20BC33EF00DB9E96 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C8CB2F4020BC340800DB9E96 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 				C850CE2420B2B57C00418D9E /* FriendCell.swift in Sources */,
 				C87D212B20A5904B00C5A830 /* UserData.swift in Sources */,
 				C87D212920A58FF800C5A830 /* Constants.swift in Sources */,
+				C8CB2F4120BC340800DB9E96 /* UserService.swift in Sources */,
 				C850CE2B20B2BC6D00418D9E /* FriendsSecondTypeCell.swift in Sources */,
 				C893E9D120B30C2500BBB214 /* ManualSwitchViewController.swift in Sources */,
 				C850CE2D20B2BE6900418D9E /* GroupsData.swift in Sources */,

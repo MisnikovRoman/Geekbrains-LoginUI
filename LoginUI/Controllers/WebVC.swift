@@ -20,7 +20,13 @@ class WebVC: UIViewController {
         super.viewDidLoad()
         loadRequetVkAuth()
     }
-
+    
+    // IBActions
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // load web page with authentification
     func loadRequetVkAuth() {
         // create url with components
         guard var authUrlComponents = URLComponents(string: URL_VK_AUTH) else { print(#function); return }
@@ -42,6 +48,7 @@ class WebVC: UIViewController {
 
 extension WebVC: WKNavigationDelegate {
     
+    // track all auto redirecting and find one with ".../blank.html"
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
         // get url where we auto redirection goes
@@ -64,10 +71,26 @@ extension WebVC: WKNavigationDelegate {
         
         // get token from parameters dictionary
         guard let token = parameters["access_token"] else { return }
-        print(token)
+        UserData.instance.authToken = token
+        print("Auth token: ", token)
         
         // cancel redirection
         decisionHandler(.cancel)
+        
+        // create alert and show it
+        let alert = UIAlertController(
+            title: "Авторизация",
+            message: "Пользователь успешно авторизирован",
+            preferredStyle: .alert)
+        let action = UIAlertAction(
+            title: "Продолжить",
+            style: .cancel) { (action) in
+                // go to login page
+                self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
 

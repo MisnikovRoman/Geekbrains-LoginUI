@@ -33,4 +33,15 @@ class UserData {
             defaults.synchronize()
         }
     }
+    
+    // key from VK API 
+    var authToken: String? {
+        get {
+            return defaults.string(forKey: AUTH_TOKEN)
+        }
+        set {
+            print("Current auth token is: \(newValue!)")
+            defaults.set(newValue, forKey: AUTH_TOKEN)
+        }
+    }
 }
