@@ -12,6 +12,19 @@ class GroupsTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserService.instance.loadUserGroups { (success) in
+            let text:String
+            if success {
+                text = "Группы пользователя загружены"
+            } else {
+                text = "Ошибка загрузки групп"
+            }
+            let alert = UIAlertController(title: "Поздравляем", message: text, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Продолжить", style: .cancel, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int { return 1 }

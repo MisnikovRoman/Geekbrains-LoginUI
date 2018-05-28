@@ -13,7 +13,8 @@ class UserService {
     
     static let instance = UserService()
     
-    func loadFriends(completionHandler: @escaping loadDataComplitionHandler) {
+    // загрузить список друзей с параметрами
+    func loadFriends(completion: @escaping loadDataComplitionHandler) {
         
         // get token from user data
         guard let token = UserData.instance.authToken else { return }
@@ -37,7 +38,91 @@ class UserService {
 
             print("JSON: \(json)") // serialized json response
             
-            completionHandler(true)
+            completion(true)
         }
     }
+    
+    // получение фотографий человека
+    func loadUserPhotos(id: String, size: VkImagesSize, completion: @escaping loadDataComplitionHandler) {
+        // get token from user data
+        guard let token = UserData.instance.authToken else { return }
+        
+        // create URL
+        var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_USERS)
+        urlWithParams?.queryItems = [
+            URLQueryItem(name: "user_ids", value: id),
+            URLQueryItem(name: "fields", value: size.rawValue),
+            URLQueryItem(name: "v", value: "5.78"),
+            URLQueryItem(name: "access_token", value: token)
+        ]
+        guard let url = urlWithParams?.url else { return }
+        
+        // make request
+        Alamofire.request(url).responseJSON { (response) in
+            
+            guard response.error == nil else {return}
+            guard let json = response.result.value else {return}
+            
+            print("JSON: \(json)") // serialized json response
+            
+            completion(true)
+        }
+    }
+    
+    // получение групп текущего пользователя
+    func loadUserGroups(completion: @escaping loadDataComplitionHandler) {
+        // get token from user data
+        guard let token = UserData.instance.authToken else { return }
+        
+        // create URL
+        var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_GROUPS)
+        urlWithParams?.queryItems = [
+            URLQueryItem(name: "count", value: "10"),
+            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "v", value: "5.78"),
+            URLQueryItem(name: "access_token", value: token)
+        ]
+        guard let url = urlWithParams?.url else { return }
+        
+        // make request
+        Alamofire.request(url).responseJSON { (response) in
+            
+            guard response.error == nil else {return}
+            guard let json = response.result.value else {return}
+            
+            print("JSON: \(json)") // serialized json response
+            
+            completion(true)
+        }
+    }
+    
+    // получение групп по поисковому запросу
+    func loadGroupsBySearch(searchText: String, completion: @escaping loadDataComplitionHandler) {
+        
+        // get token from user data
+        guard let token = UserData.instance.authToken else { return }
+        
+        // create URL
+        var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_SEARCH_GROUPS)
+        urlWithParams?.queryItems = [
+            URLQueryItem(name: "q", value: searchText),
+            URLQueryItem(name: "count", value: "10"),
+            URLQueryItem(name: "type", value: "group"),
+            URLQueryItem(name: "v", value: "5.78"),
+            URLQueryItem(name: "access_token", value: token)
+        ]
+        guard let url = urlWithParams?.url else { return }
+        
+        // make request
+        Alamofire.request(url).responseJSON { (response) in
+            
+            guard response.error == nil else {return}
+            guard let json = response.result.value else {return}
+            
+            print("JSON: \(json)") // serialized json response
+            
+            completion(true)
+        }
+    }
+    
 }

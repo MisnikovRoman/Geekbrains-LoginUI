@@ -11,6 +11,16 @@ import Foundation
 // closure constants
 typealias loadDataComplitionHandler = (_ success: Bool)->()
 
+// vk api constants
+enum VkImagesSize: String {
+    case photo50 = "photo_50"
+    case photo100 = "photo_100"
+    case photo200 = "photo_200"
+    case photoMax = "photo_max"
+    case photo400 = "photo_400_orig"
+    case photoMaxOriginal = "photo_max_orig"
+}
+
 // segues constants
 let TABBAR_SEGUE = "TabBarSegue"
 let UNWIND_TO_LOGIN = "BackToLoginVC"
@@ -37,6 +47,9 @@ let URL_VK_API_BASE = "https://api.vk.com/method"
 
 // url parts constants
 let VK_GET_FRIENDS = "/friends.get"
+let VK_GET_GROUPS = "/groups.get"
+let VK_SEARCH_GROUPS = "/groups.search"
+let VK_GET_USERS = "/users.get"
 
 // other constants
 let CLIENT_ID = "6491638"   // VK app identification number
