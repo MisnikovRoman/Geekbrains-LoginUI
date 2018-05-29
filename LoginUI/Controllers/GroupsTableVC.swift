@@ -65,6 +65,7 @@ class GroupsTableVC: UITableViewController {
         guard let indexPath = searchGroupsController.tableView.indexPathForSelectedRow else { return }
         // get name of group to add
         let groupName = SearchGroupData.getGroupes()[indexPath.row]
+        
         // adding
         GroupsData.add(named: groupName, imageName: "test")
         // reload table view

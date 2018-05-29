@@ -26,8 +26,6 @@ class SearchGroupsTableVC: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    
 }
 
 extension SearchGroupsTableVC {
@@ -44,12 +42,5 @@ extension SearchGroupsTableVC {
         cell.nameLbl.text = SearchGroupData.getGroupes()[indexPath.row]
         
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //        // add new group to groups list
-        //        let nameOfItemToAdd = SearchGroupData.getGroupes()[indexPath.row]
-        //        GroupsData.add(named: nameOfItemToAdd, imageName: "test")
     }
 }
