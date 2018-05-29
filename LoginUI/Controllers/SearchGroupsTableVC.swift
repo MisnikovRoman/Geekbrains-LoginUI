@@ -13,7 +13,7 @@ class SearchGroupsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserService.instance.loadGroupsBySearch(searchText: "iphone") { (success) in
+        VKService.instance.loadGroupsBySearch(searchText: "iphone") { (success) in
             let text:String
             if success {
                 text = "Группы пользователя найдены загружены"

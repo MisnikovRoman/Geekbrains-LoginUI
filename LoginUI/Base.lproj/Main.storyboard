@@ -302,47 +302,70 @@
         <scene sceneID="nbJ-yj-ilP">
             <objects>
                 <tableViewController id="u7d-Yi-9fF" customClass="FriendsTableVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4tE-r2-w7g">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4tE-r2-w7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCellIdentifier" id="Woe-rP-yeC" customClass="FriendCell" customModule="LoginUI" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FriendCellIdentifier" id="Woe-rP-yeC" customClass="FriendCell" customModule="LoginUI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Woe-rP-yeC" id="S53-tq-uDJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-man" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-M3-1Xs">
-                                            <rect key="frame" x="16" y="5" width="33" height="33"/>
+                                            <rect key="frame" x="15" y="11" width="54.5" height="55"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="33" id="7ka-0s-0rO"/>
-                                                <constraint firstAttribute="width" constant="33" id="kac-OR-aeG"/>
+                                                <constraint firstAttribute="width" secondItem="aO9-M3-1Xs" secondAttribute="height" multiplier="1:1" id="iMl-Q4-dKJ"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="16"/>
+                                                    <real key="value" value="30"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Роман Мисников" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-g4-6E1">
-                                            <rect key="frame" x="65" y="11" width="137" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-pw-02a">
+                                            <rect key="frame" x="79.5" y="20" width="137" height="37.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Роман Мисников" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-g4-6E1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="137" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 сентября 1990" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyx-8A-8a6">
+                                                    <rect key="frame" x="0.0" y="20.5" width="111.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-Ns-AFX">
+                                            <rect key="frame" x="0.0" y="0.0" width="5" height="78"/>
+                                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="5" id="MLd-ll-xUH"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="aO9-M3-1Xs" firstAttribute="leading" secondItem="S53-tq-uDJ" secondAttribute="leading" constant="16" id="hYY-Rf-EGM"/>
-                                        <constraint firstItem="aO9-M3-1Xs" firstAttribute="centerY" secondItem="S53-tq-uDJ" secondAttribute="centerY" id="jxK-74-zCf"/>
-                                        <constraint firstItem="4lg-g4-6E1" firstAttribute="centerY" secondItem="S53-tq-uDJ" secondAttribute="centerY" id="sAg-hv-GHD"/>
-                                        <constraint firstItem="4lg-g4-6E1" firstAttribute="leading" secondItem="aO9-M3-1Xs" secondAttribute="trailing" constant="16" id="z3E-Gu-RVE"/>
+                                        <constraint firstItem="aO9-M3-1Xs" firstAttribute="centerY" secondItem="S53-tq-uDJ" secondAttribute="centerY" id="ACZ-Re-m5r"/>
+                                        <constraint firstItem="aO9-M3-1Xs" firstAttribute="leading" secondItem="0v9-Ns-AFX" secondAttribute="trailing" constant="10" id="B3n-cD-jLm"/>
+                                        <constraint firstItem="aO9-M3-1Xs" firstAttribute="width" secondItem="S53-tq-uDJ" secondAttribute="width" multiplier="0.16" id="BPv-PX-cLY"/>
+                                        <constraint firstAttribute="bottom" secondItem="0v9-Ns-AFX" secondAttribute="bottom" id="BTn-3v-yVa"/>
+                                        <constraint firstItem="0v9-Ns-AFX" firstAttribute="leading" secondItem="S53-tq-uDJ" secondAttribute="leading" id="CQe-Ft-EO2"/>
+                                        <constraint firstItem="0v9-Ns-AFX" firstAttribute="top" secondItem="S53-tq-uDJ" secondAttribute="top" id="N9X-vF-Oaq"/>
+                                        <constraint firstItem="f3r-pw-02a" firstAttribute="leading" secondItem="aO9-M3-1Xs" secondAttribute="trailing" constant="10" id="gDk-Gj-nX2"/>
+                                        <constraint firstItem="f3r-pw-02a" firstAttribute="centerY" secondItem="S53-tq-uDJ" secondAttribute="centerY" id="wfb-zn-Xdp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarImageView" destination="aO9-M3-1Xs" id="Cbq-bb-Zb0"/>
+                                    <outlet property="birthdayLbl" destination="yyx-8A-8a6" id="3aw-lw-HTP"/>
                                     <outlet property="nameLbl" destination="4lg-g4-6E1" id="Qz6-bL-C4A"/>
+                                    <outlet property="statusView" destination="0v9-Ns-AFX" id="ZOs-cv-cy0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

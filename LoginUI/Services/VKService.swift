@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
-class UserService {
+class VKService {
     
-    static let instance = UserService()
+    static let instance = VKService()
     
     // загрузить список друзей с параметрами
     func loadFriends(completion: @escaping loadDataComplitionHandler) {
@@ -23,7 +24,7 @@ class UserService {
         var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_FRIENDS)
         urlWithParams?.queryItems = [
             URLQueryItem(name: "order", value: "hints"),
-            URLQueryItem(name: "count", value: "10"),
+            URLQueryItem(name: "count", value: "20"),
             URLQueryItem(name: "fields", value: "sex, bdate"),
             URLQueryItem(name: "v", value: "5.78"),
             URLQueryItem(name: "access_token", value: token)
@@ -31,12 +32,19 @@ class UserService {
         guard let url = urlWithParams?.url else { return }
         
         // make request
-        Alamofire.request(url).responseJSON { (response) in
+        Alamofire.request(url).responseData { (response) in
 
             guard response.error == nil else {return}
-            guard let json = response.result.value else {return}
-
-            print("JSON: \(json)") // serialized json response
+            guard let data = response.value else {return}
+            
+            // use swifty json framework
+            guard let json = try? JSON(data: data) else {return}
+            // get array of items (friends with parameters: id, first_name, last_name, deactivated, online)
+            let items = json["response"]["items"].arrayValue
+            // remap array: [Data] -> [Friend]
+            let friendsArray = items.map() { Friend(jsonItems: $0) }
+            // save data to FriendsData
+            FriendsData.instance.friends = friendsArray
             
             completion(true)
         }

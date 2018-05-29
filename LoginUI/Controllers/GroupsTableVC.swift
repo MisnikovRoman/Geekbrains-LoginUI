@@ -13,7 +13,7 @@ class GroupsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserService.instance.loadUserGroups { (success) in
+        VKService.instance.loadUserGroups { (success) in
             let text:String
             if success {
                 text = "Группы пользователя загружены"

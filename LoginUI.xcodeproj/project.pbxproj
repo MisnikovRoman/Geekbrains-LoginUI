@@ -31,7 +31,7 @@
 		C8C810C320A9841100145B83 /* SearchGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C220A9841100145B83 /* SearchGroupsTableVC.swift */; };
 		C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */; };
 		C8C810CF20A99ABE00145B83 /* UINavigationController-backTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */; };
-		C8CB2F4120BC340800DB9E96 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CB2F4020BC340800DB9E96 /* UserService.swift */; };
+		C8CB2F4120BC340800DB9E96 /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CB2F4020BC340800DB9E96 /* VKService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,7 @@
 		C8C810C220A9841100145B83 /* SearchGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroupsTableVC.swift; sourceTree = "<group>"; };
 		C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-tintColor.swift"; sourceTree = "<group>"; };
 		C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController-backTintColor.swift"; sourceTree = "<group>"; };
-		C8CB2F4020BC340800DB9E96 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C8CB2F4020BC340800DB9E96 /* VKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +188,7 @@
 		C8CB2F3F20BC33EF00DB9E96 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C8CB2F4020BC340800DB9E96 /* UserService.swift */,
+				C8CB2F4020BC340800DB9E96 /* VKService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 				C850CE2420B2B57C00418D9E /* FriendCell.swift in Sources */,
 				C87D212B20A5904B00C5A830 /* UserData.swift in Sources */,
 				C87D212920A58FF800C5A830 /* Constants.swift in Sources */,
-				C8CB2F4120BC340800DB9E96 /* UserService.swift in Sources */,
+				C8CB2F4120BC340800DB9E96 /* VKService.swift in Sources */,
 				C850CE2B20B2BC6D00418D9E /* FriendsSecondTypeCell.swift in Sources */,
 				C893E9D120B30C2500BBB214 /* ManualSwitchViewController.swift in Sources */,
 				C850CE2D20B2BE6900418D9E /* GroupsData.swift in Sources */,
@@ -493,7 +493,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJHX98NUDV;
 				INFOPLIST_FILE = LoginUI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RFMisnikov.LoginUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -509,7 +512,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJHX98NUDV;
 				INFOPLIST_FILE = LoginUI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RFMisnikov.LoginUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -18,7 +18,7 @@ class FriendsCollectionVC: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        UserService.instance.loadUserPhotos(id: "1", size: .photoMax) { (success) in
+        VKService.instance.loadUserPhotos(id: "1", size: .photoMax) { (success) in
             let text:String
             if success {
                 text = "Фотография Павла Дурова загружена"
@@ -42,7 +42,7 @@ extension FriendsCollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return FriendsData.getFriendsData().count
+        return FriendsData.instance.friends.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

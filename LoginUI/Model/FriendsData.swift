@@ -7,16 +7,24 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class FriendsData {
-    private static let friends = [ "Роман Мисников",
-                           "Анастасия Щепёткина",
-                           "Вадим Врублевский",
-                           "Иван Карманов",
-                           "Иван Чепелкин",
-                           "Данил Буслаев",
-                           "Коля Голодный",
-                           "Алексей Муравьёв" ]
+    static let instance = FriendsData()
+    var friends: [Friend] = []
+}
+
+class Friend {
     
-    static func getFriendsData () -> [String] { return friends }
+    var firstName: String = ""
+    var lastName: String = ""
+    var id: Int = 0
+    var isOnline: Bool = false
+    
+    init(jsonItems: JSON) {
+        self.firstName = jsonItems["first_name"].stringValue
+        self.lastName = jsonItems["last_name"].stringValue
+        self.id = jsonItems["id"].intValue
+        self.isOnline = jsonItems["online"].boolValue
+    }
 }

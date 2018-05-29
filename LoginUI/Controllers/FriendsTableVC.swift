@@ -15,17 +15,16 @@ class FriendsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserService.instance.loadFriends { (success) in
-            let text:String
+        VKService.instance.loadFriends { (success) in
+        
             if success {
-                text = "Список друзей успешно загружен"
+                self.tableView.reloadData()
             } else {
-                text = "Ошибка загрузки друзей"
+                let alert = UIAlertController(title: "Внимание", message: "Список друзей не был загружен", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Продолжить", style: .cancel, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
-            let alert = UIAlertController(title: "Поздравляем", message: text, preferredStyle: .alert)
-            let action = UIAlertAction(title: "Продолжить", style: .cancel, handler: nil)
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -53,13 +52,13 @@ extension FriendsTableVC {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return FriendsData.getFriendsData().count
+        return FriendsData.instance.friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FRIEND) as! FriendCell
-        cell.nameLbl.text = FriendsData.getFriendsData()[indexPath.row]
+        cell.setupCell(with: FriendsData.instance.friends[indexPath.row])
         
         return cell
     }
