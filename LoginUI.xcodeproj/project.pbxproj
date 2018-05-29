@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A85672FC87B404CB9A2D1D63 /* Pods_LoginUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA52BFC602E51606C786E126 /* Pods_LoginUI.framework */; };
 		C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = C800615820A1E17100CCA6B3 /* UIView-CornerRadius.swift */; };
+		C80087A220BD90DF00769880 /* UIColor-CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */; };
 		C84B9A1F20A0DF15003D01A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B9A1E20A0DF15003D01A9 /* AppDelegate.swift */; };
 		C84B9A2120A0DF15003D01A9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B9A2020A0DF15003D01A9 /* LoginVC.swift */; };
 		C84B9A2420A0DF15003D01A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2220A0DF15003D01A9 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		AA52BFC602E51606C786E126 /* Pods_LoginUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69A2C20BA25E91DC8534DEA /* Pods-LoginUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginUI/Pods-LoginUI.debug.xcconfig"; sourceTree = "<group>"; };
 		C800615820A1E17100CCA6B3 /* UIView-CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-CornerRadius.swift"; sourceTree = "<group>"; };
+		C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-CustomColors.swift"; sourceTree = "<group>"; };
 		C84B9A1B20A0DF15003D01A9 /* LoginUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84B9A1E20A0DF15003D01A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C84B9A2020A0DF15003D01A9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */,
 				C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */,
 				C893E9D020B30C2500BBB214 /* ManualSwitchViewController.swift */,
+				C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				C8C810C120A983F100145B83 /* GroupsTableVC.swift in Sources */,
 				C89AAFD020A5A48A00E3BC93 /* FriendsCollectionVC.swift in Sources */,
 				C850CE3320B2EFCC00418D9E /* SearchGroupCell.swift in Sources */,
+				C80087A220BD90DF00769880 /* UIColor-CustomColors.swift in Sources */,
 				C8C810C320A9841100145B83 /* SearchGroupsTableVC.swift in Sources */,
 				C850CE2F20B2BFBA00418D9E /* GroupCell.swift in Sources */,
 				C84B9A1F20A0DF15003D01A9 /* AppDelegate.swift in Sources */,

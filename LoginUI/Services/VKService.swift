@@ -66,12 +66,21 @@ class VKService {
         guard let url = urlWithParams?.url else { return }
         
         // make request
-        Alamofire.request(url).responseJSON { (response) in
+        Alamofire.request(url).responseData { (response) in
             
-            guard response.error == nil else {return}
-            guard let json = response.result.value else {return}
+            guard response.error == nil else { return }
+            guard let data = response.value else { return }
             
-            print("JSON: \(json)") // serialized json response
+            guard let json = try? JSON(data: data) else { return }
+            
+            let images = json["response"].arrayValue
+            for (index, image) in images.enumerated() {
+                let imageUrl = image["photo_50"].stringValue
+                let id = image["id"].intValue
+                let image = Image(url: imageUrl, id: id)
+
+                FriendsData.instance.friends[index].image = image
+            }
             
             completion(true)
         }

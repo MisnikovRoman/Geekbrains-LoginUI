@@ -14,11 +14,29 @@ class FriendsTableVC: UITableViewController {
     // basic methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataFromServer()
         
+    }
+    
+    func loadDataFromServer() {
+    
         VKService.instance.loadFriends { (success) in
-        
+            
             if success {
-                self.tableView.reloadData()
+                // create list of IDs: "12314,892635,982365..."
+                var ids = ""
+                for (index, friend) in FriendsData.instance.friends.enumerated() {
+                    ids += index != FriendsData.instance.friends.count-1 ? "\(friend.id)," : "\(friend.id)"
+                }
+                
+                // load images JSON array for ids
+                VKService.instance.loadUserPhotos(id: ids, size: VkImagesSize.photo50) { (success) in
+                    if success {
+                        self.tableView.reloadData()
+                    }
+                }
+                
+                //self.tableView.reloadData()
             } else {
                 let alert = UIAlertController(title: "Внимание", message: "Список друзей не был загружен", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Продолжить", style: .cancel, handler: nil)
@@ -41,6 +59,7 @@ class FriendsTableVC: UITableViewController {
     }
 
 }
+
 
 // configure table view
 extension FriendsTableVC {

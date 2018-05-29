@@ -314,9 +314,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-man" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-M3-1Xs">
-                                            <rect key="frame" x="15" y="11" width="54.5" height="55"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-man" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-M3-1Xs">
+                                            <rect key="frame" x="15" y="8.5" width="60" height="60"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="RFL-8l-hkR"/>
                                                 <constraint firstAttribute="width" secondItem="aO9-M3-1Xs" secondAttribute="height" multiplier="1:1" id="iMl-Q4-dKJ"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -326,7 +327,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-pw-02a">
-                                            <rect key="frame" x="79.5" y="20" width="137" height="37.5"/>
+                                            <rect key="frame" x="85" y="20" width="137" height="37.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Роман Мисников" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-g4-6E1">
                                                     <rect key="frame" x="0.0" y="0.0" width="137" height="20.5"/>
@@ -353,7 +354,6 @@
                                     <constraints>
                                         <constraint firstItem="aO9-M3-1Xs" firstAttribute="centerY" secondItem="S53-tq-uDJ" secondAttribute="centerY" id="ACZ-Re-m5r"/>
                                         <constraint firstItem="aO9-M3-1Xs" firstAttribute="leading" secondItem="0v9-Ns-AFX" secondAttribute="trailing" constant="10" id="B3n-cD-jLm"/>
-                                        <constraint firstItem="aO9-M3-1Xs" firstAttribute="width" secondItem="S53-tq-uDJ" secondAttribute="width" multiplier="0.16" id="BPv-PX-cLY"/>
                                         <constraint firstAttribute="bottom" secondItem="0v9-Ns-AFX" secondAttribute="bottom" id="BTn-3v-yVa"/>
                                         <constraint firstItem="0v9-Ns-AFX" firstAttribute="leading" secondItem="S53-tq-uDJ" secondAttribute="leading" id="CQe-Ft-EO2"/>
                                         <constraint firstItem="0v9-Ns-AFX" firstAttribute="top" secondItem="S53-tq-uDJ" secondAttribute="top" id="N9X-vF-Oaq"/>

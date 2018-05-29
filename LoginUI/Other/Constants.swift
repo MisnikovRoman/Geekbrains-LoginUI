@@ -10,6 +10,7 @@ import Foundation
 
 // closure constants
 typealias loadDataComplitionHandler = (_ success: Bool)->()
+typealias loadDataComplitionHandlerWithData = ([Image]?, Error?)->()
 
 // vk api constants
 enum VkImagesSize: String {

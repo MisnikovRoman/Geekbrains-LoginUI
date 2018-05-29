@@ -20,6 +20,7 @@ class Friend {
     var lastName: String = ""
     var id: Int = 0
     var isOnline: Bool = false
+    var image:Image?
     
     init(jsonItems: JSON) {
         self.firstName = jsonItems["first_name"].stringValue
@@ -28,3 +29,31 @@ class Friend {
         self.isOnline = jsonItems["online"].boolValue
     }
 }
+
+struct Image {
+    let url: String
+    let id: Int
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

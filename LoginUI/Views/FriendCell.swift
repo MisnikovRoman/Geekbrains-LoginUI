@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FriendCell: UITableViewCell {
     
@@ -17,6 +18,12 @@ class FriendCell: UITableViewCell {
     
     func setupCell(with friend: Friend) {
         nameLbl.text = friend.firstName + " " + friend.lastName
-        statusView.backgroundColor = friend.isOnline ? .blue : .clear
+        statusView.backgroundColor = friend.isOnline ? .customLightBlue : .clear
+        
+        if let stringUrl = friend.image?.url {
+            if let url = URL(string: stringUrl) {
+                avatarImageView.kf.setImage(with: url)
+            }
+        }
     }
 }
