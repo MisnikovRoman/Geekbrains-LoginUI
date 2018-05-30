@@ -24,8 +24,8 @@ class VKService {
         var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_FRIENDS)
         urlWithParams?.queryItems = [
             URLQueryItem(name: "order", value: "hints"),
-            URLQueryItem(name: "count", value: "20"),
-            URLQueryItem(name: "fields", value: "sex, bdate"),
+            URLQueryItem(name: "count", value: "100"),
+            URLQueryItem(name: "fields", value: "sex,bdate,photo_200,online"),
             URLQueryItem(name: "v", value: "5.78"),
             URLQueryItem(name: "access_token", value: token)
         ]
@@ -79,7 +79,7 @@ class VKService {
                 let id = image["id"].intValue
                 let image = Image(url: imageUrl, id: id)
 
-                FriendsData.instance.friends[index].image = image
+                // FriendsData.instance.friends[index].image = image
             }
             
             completion(true)

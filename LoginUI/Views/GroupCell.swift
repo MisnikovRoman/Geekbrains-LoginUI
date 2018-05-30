@@ -18,7 +18,10 @@ class GroupCell: UITableViewCell {
     func setupGroupCell(with group: Group) {
         nameLbl.text = group.name
         statusLbl.text = group.status
-        membersCount.text = "\(group.membersCount) чел."
+        
+        let count = group.membersCount
+        let textCount = count > 1000 ? "\(count/1000)К" : "\(count)"
+        membersCount.text = textCount
         
         let stringUrl = group.imageName
         if let url = URL(string: stringUrl) {

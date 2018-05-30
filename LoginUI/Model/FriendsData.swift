@@ -20,13 +20,16 @@ class Friend {
     var lastName: String = ""
     var id: Int = 0
     var isOnline: Bool = false
-    var image:Image?
+    var imageName: String = ""
+    var birthday: String = ""
     
     init(jsonItems: JSON) {
         self.firstName = jsonItems["first_name"].stringValue
         self.lastName = jsonItems["last_name"].stringValue
         self.id = jsonItems["id"].intValue
         self.isOnline = jsonItems["online"].boolValue
+        self.imageName = jsonItems["photo_200"].stringValue
+        self.birthday = jsonItems["bdate"].stringValue
     }
 }
 

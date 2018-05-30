@@ -17,13 +17,14 @@ class FriendCell: UITableViewCell {
     @IBOutlet weak var statusView: UIView!
     
     func setupCell(with friend: Friend) {
+        // set basic parameters
         nameLbl.text = friend.firstName + " " + friend.lastName
         statusView.backgroundColor = friend.isOnline ? .customLightBlue : .clear
+        birthdayLbl.text = friend.birthday
+        // get image name
+        let stringUrl = friend.imageName
+        // set image with Kingfisher framework
+        if let url = URL(string: stringUrl) { avatarImageView.kf.setImage(with: url) }
         
-        if let stringUrl = friend.image?.url {
-            if let url = URL(string: stringUrl) {
-                avatarImageView.kf.setImage(with: url)
-            }
-        }
     }
 }
