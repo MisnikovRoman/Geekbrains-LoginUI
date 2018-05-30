@@ -96,6 +96,7 @@ class VKService {
         urlWithParams?.queryItems = [
             URLQueryItem(name: "count", value: "10"),
             URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "fields", value: "description,members_count,status"),
             URLQueryItem(name: "v", value: "5.78"),
             URLQueryItem(name: "access_token", value: token)
         ]
@@ -110,9 +111,15 @@ class VKService {
             // get data
             guard let data = response.value else {return}
             // parse JSON
-            guard let jsonParsedResponse = try? JSONDecoder().decode(GroupResponse.self, from: data) else { return }
-            // fill group data
-            jsonParsedResponse.response.items.forEach { GroupsData2.instance.groups.append($0) }
+            do{
+                let jsonParsedResponse = try JSONDecoder().decode(GroupResponse.self, from: data)
+                // fill group data
+                jsonParsedResponse.response.items.forEach {
+                    print($0.name, $0.description, $0.membersCount)
+                    GroupsData.instance.groups.append($0) }
+            }
+            catch let err { print("->", err, "\nDescription:", err.localizedDescription) }
+            
             // call completion handler
             completion(true)
         }

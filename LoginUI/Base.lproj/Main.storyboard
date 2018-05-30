@@ -481,48 +481,72 @@
         <scene sceneID="AcJ-GD-dXM">
             <objects>
                 <tableViewController id="p0M-bj-G4l" customClass="GroupsTableVC" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5ZQ-rX-tc0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5ZQ-rX-tc0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCellIdentifier" id="iXP-Fv-rqA" customClass="GroupCell" customModule="LoginUI" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCellIdentifier" rowHeight="78" id="iXP-Fv-rqA" customClass="GroupCell" customModule="LoginUI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iXP-Fv-rqA" id="rWl-mN-KBf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-man" translatesAutoresizingMaskIntoConstraints="NO" id="WaY-9b-K2W">
-                                            <rect key="frame" x="16" y="5" width="33" height="33"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-man" translatesAutoresizingMaskIntoConstraints="NO" id="WaY-9b-K2W">
+                                            <rect key="frame" x="10" y="9" width="60" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="33" id="0KR-qT-lpa"/>
-                                                <constraint firstAttribute="width" constant="33" id="Zta-4U-145"/>
+                                                <constraint firstAttribute="height" constant="60" id="232-Li-IBg"/>
+                                                <constraint firstAttribute="width" constant="60" id="8lY-on-35p"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="16"/>
+                                                    <real key="value" value="30"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настоящий Лентач" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-6A-L35">
-                                            <rect key="frame" x="65" y="11" width="152" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-Oy-Db1">
+                                            <rect key="frame" x="80" y="20" width="269" height="37.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="09x-wi-zJW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="197" height="37.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настоящий Лентач" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-6A-L35">
+                                                            <rect key="frame" x="0.0" y="0.0" width="152" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQe-3a-LYr">
+                                                            <rect key="frame" x="0.0" y="20.5" width="119.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10232 чел." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydo-2t-kji">
+                                                    <rect key="frame" x="197" y="0.0" width="72" height="37.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bTU-6A-L35" firstAttribute="leading" secondItem="WaY-9b-K2W" secondAttribute="trailing" constant="16" id="9fm-XX-7vi"/>
-                                        <constraint firstItem="bTU-6A-L35" firstAttribute="centerY" secondItem="rWl-mN-KBf" secondAttribute="centerY" id="R5w-By-A14"/>
-                                        <constraint firstItem="bTU-6A-L35" firstAttribute="leading" secondItem="WaY-9b-K2W" secondAttribute="trailing" constant="16" id="UPv-7r-9wz"/>
-                                        <constraint firstItem="WaY-9b-K2W" firstAttribute="centerY" secondItem="rWl-mN-KBf" secondAttribute="centerY" id="bEs-fP-SYJ"/>
-                                        <constraint firstItem="WaY-9b-K2W" firstAttribute="leading" secondItem="rWl-mN-KBf" secondAttribute="leading" constant="16" id="xiu-j9-Jqv"/>
+                                        <constraint firstItem="0Ff-Oy-Db1" firstAttribute="leading" secondItem="WaY-9b-K2W" secondAttribute="trailing" constant="10" id="ZVd-DV-mgq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0Ff-Oy-Db1" secondAttribute="trailing" constant="10" id="cjM-dW-rnm"/>
+                                        <constraint firstItem="0Ff-Oy-Db1" firstAttribute="centerY" secondItem="rWl-mN-KBf" secondAttribute="centerY" id="jVl-82-eQZ"/>
+                                        <constraint firstItem="WaY-9b-K2W" firstAttribute="leading" secondItem="rWl-mN-KBf" secondAttribute="leading" constant="10" id="pLR-cu-qmC"/>
+                                        <constraint firstItem="WaY-9b-K2W" firstAttribute="centerY" secondItem="rWl-mN-KBf" secondAttribute="centerY" id="uOw-S5-jNk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarImageView" destination="WaY-9b-K2W" id="oqN-yD-aJw"/>
+                                    <outlet property="membersCount" destination="ydo-2t-kji" id="jFf-pQ-DlX"/>
                                     <outlet property="nameLbl" destination="bTU-6A-L35" id="Dyf-21-q4E"/>
+                                    <outlet property="statusLbl" destination="eQe-3a-LYr" id="xUd-KR-Jvz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -558,7 +582,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiR-2y-Csx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Y48-iO-pA2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3065" y="516"/>
+            <point key="canvasLocation" x="3064.8000000000002" y="515.8920539730135"/>
         </scene>
         <!--Search groups-->
         <scene sceneID="kmA-fL-JH2">

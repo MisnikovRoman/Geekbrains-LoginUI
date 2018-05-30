@@ -20,12 +20,19 @@ struct Response: Decodable {
 struct Group: Decodable {
     let id: Int
     let name: String
-    let photo50: String
+    let imageName: String
+    let description: String
+    let membersCount: Int
+    let status: String
+    
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case photo50 = "photo_50"
+        case imageName = "photo_100"
+        case description
+        case membersCount = "members_count"
+        case status
     }
 }
 
