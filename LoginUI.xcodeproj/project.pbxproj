@@ -28,6 +28,7 @@
 		C893E9D120B30C2500BBB214 /* ManualSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C893E9D020B30C2500BBB214 /* ManualSwitchViewController.swift */; };
 		C89AAFCE20A5A47300E3BC93 /* FriendsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCD20A5A47300E3BC93 /* FriendsTableVC.swift */; };
 		C89AAFD020A5A48A00E3BC93 /* FriendsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCF20A5A48A00E3BC93 /* FriendsCollectionVC.swift */; };
+		C8C57DBF20BE9AE600ABC6F9 /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C57DBE20BE9AE600ABC6F9 /* SimpleAlert.swift */; };
 		C8C810C120A983F100145B83 /* GroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C020A983F100145B83 /* GroupsTableVC.swift */; };
 		C8C810C320A9841100145B83 /* SearchGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C220A9841100145B83 /* SearchGroupsTableVC.swift */; };
 		C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */; };
@@ -61,6 +62,7 @@
 		C893E9D020B30C2500BBB214 /* ManualSwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSwitchViewController.swift; sourceTree = "<group>"; };
 		C89AAFCD20A5A47300E3BC93 /* FriendsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableVC.swift; sourceTree = "<group>"; };
 		C89AAFCF20A5A48A00E3BC93 /* FriendsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionVC.swift; sourceTree = "<group>"; };
+		C8C57DBE20BE9AE600ABC6F9 /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 		C8C810C020A983F100145B83 /* GroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableVC.swift; sourceTree = "<group>"; };
 		C8C810C220A9841100145B83 /* SearchGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroupsTableVC.swift; sourceTree = "<group>"; };
 		C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-tintColor.swift"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				C850CE2A20B2BC6D00418D9E /* FriendsSecondTypeCell.swift */,
 				C850CE2E20B2BFBA00418D9E /* GroupCell.swift */,
 				C850CE3220B2EFCC00418D9E /* SearchGroupCell.swift */,
+				C8C57DBE20BE9AE600ABC6F9 /* SimpleAlert.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				C87D212B20A5904B00C5A830 /* UserData.swift in Sources */,
 				C87D212920A58FF800C5A830 /* Constants.swift in Sources */,
 				C8CB2F4120BC340800DB9E96 /* VKService.swift in Sources */,
+				C8C57DBF20BE9AE600ABC6F9 /* SimpleAlert.swift in Sources */,
 				C850CE2B20B2BC6D00418D9E /* FriendsSecondTypeCell.swift in Sources */,
 				C893E9D120B30C2500BBB214 /* ManualSwitchViewController.swift in Sources */,
 				C850CE2D20B2BE6900418D9E /* GroupsData.swift in Sources */,

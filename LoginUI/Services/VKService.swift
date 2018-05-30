@@ -102,13 +102,18 @@ class VKService {
         guard let url = urlWithParams?.url else { return }
         
         // make request
-        Alamofire.request(url).responseJSON { (response) in
-            
+        Alamofire.request(url).responseData{ (response) in
+            // check errors
             guard response.error == nil else {return}
-            guard let json = response.result.value else {return}
-            
-            print("JSON: \(json)") // serialized json response
-            
+            // check status code (200)
+            guard response.response?.statusCode == 200 else { return }
+            // get data
+            guard let data = response.value else {return}
+            // parse JSON
+            guard let jsonParsedResponse = try? JSONDecoder().decode(GroupResponse.self, from: data) else { return }
+            // fill group data
+            jsonParsedResponse.response.items.forEach { GroupsData2.instance.groups.append($0) }
+            // call completion handler
             completion(true)
         }
     }

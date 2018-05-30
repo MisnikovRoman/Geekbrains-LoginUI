@@ -20,6 +20,7 @@ class FriendsTableVC: UITableViewController {
     
     func loadDataFromServer() {
     
+        // 1st - load friends (id, first and last name)
         VKService.instance.loadFriends { (success) in
             
             if success {
@@ -33,15 +34,12 @@ class FriendsTableVC: UITableViewController {
                 VKService.instance.loadUserPhotos(id: ids, size: VkImagesSize.photo50) { (success) in
                     if success {
                         self.tableView.reloadData()
+                    } else {
+                        simpleAlert(title: "Внимание", message: "Невозможно загрузить подробные данные о пользователях", vc: self)
                     }
                 }
-                
-                //self.tableView.reloadData()
             } else {
-                let alert = UIAlertController(title: "Внимание", message: "Список друзей не был загружен", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Продолжить", style: .cancel, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+                simpleAlert(title: "Внимание", message: "Список друзей не был загружен", vc: self)
             }
         }
     }

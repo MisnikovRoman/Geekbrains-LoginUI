@@ -40,7 +40,6 @@ extension SearchGroupsTableVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_SEARCH_GROUP, for: indexPath) as! SearchGroupCell
         cell.nameLbl.text = SearchGroupData.getGroupes()[indexPath.row]
-        
         return cell
     }
 }

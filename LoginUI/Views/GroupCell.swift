@@ -13,4 +13,8 @@ class GroupCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     
+    func setupGroupCell(with group: Group) {
+        nameLbl.text = group.name
+    }
+    
 }
