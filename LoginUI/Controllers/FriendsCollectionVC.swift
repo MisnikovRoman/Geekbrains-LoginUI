@@ -12,12 +12,35 @@ private let reuseIdentifier = "Cell"
 
 class FriendsCollectionVC: UICollectionViewController {
    
+    var userID: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
+        loadPhotos()
+        
+    }
+    
+    func loadPhotos() {
+        
+        guard let id = Int(userID) else { return }
+        guard id > 0 else { return }
+        
+        VKService.instance.loadUserPhotos(id: userID, size: VkImagesSize.photo100) { (success) in
+            if success {
+                self.collectionView?.reloadData()
+            } else {
+                simpleAlert(title: "Внимание", message: "Ошибка загрузки данных пользователя", vc: self)
+            }
+        }
+    }
+    
+    deinit {
+        print(#function)
+        PhotosData.instance.photos = []
     }
 }
 

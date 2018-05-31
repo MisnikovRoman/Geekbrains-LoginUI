@@ -11,6 +11,8 @@ import Alamofire
 
 class FriendsTableVC: UITableViewController {
 
+    var selectedUserID: String!
+    
     // basic methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,13 @@ class FriendsTableVC: UITableViewController {
         
         UserData.instance.isLoggedIn = false
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let photosVC = segue.destination as? FriendsCollectionVC {
+            // pass data to the next view controller
+            photosVC.userID = selectedUserID
+        }
     }
 
 }
@@ -68,13 +77,9 @@ extension FriendsTableVC {
         // get selected user id
         let userID = FriendsData.instance.friends[indexPath.row].id
         
-        VKService.instance.loadUserPhotos(id: "\(userID)", size: VkImagesSize.photo100) { (success) in
-            if success {
-                self.performSegue(withIdentifier: PHOTOS_SEGUE, sender: nil)
-            } else {
-                simpleAlert(title: "Внимание", message: "Ошибка загрузки данных пользователя", vc: self)
-            }
-        }
+        self.selectedUserID = "\(userID)"
+        performSegue(withIdentifier: PHOTOS_SEGUE, sender: nil)
+
     }
     
 }
