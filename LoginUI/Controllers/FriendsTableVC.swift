@@ -64,4 +64,17 @@ extension FriendsTableVC {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // get selected user id
+        let userID = FriendsData.instance.friends[indexPath.row].id
+        
+        VKService.instance.loadUserPhotos(id: "\(userID)", size: VkImagesSize.photo100) { (success) in
+            if success {
+                self.performSegue(withIdentifier: PHOTOS_SEGUE, sender: nil)
+            } else {
+                simpleAlert(title: "Внимание", message: "Ошибка загрузки данных пользователя", vc: self)
+            }
+        }
+    }
+    
 }

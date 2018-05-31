@@ -39,6 +39,7 @@ struct Group: Decodable {
 class GroupsData {
     static let instance = GroupsData()
     var groups: [Group] = []
+    var searchGroups: [Group] = []
 }
 
 

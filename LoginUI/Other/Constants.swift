@@ -26,6 +26,7 @@ enum VkImagesSize: String {
 let TABBAR_SEGUE = "TabBarSegue"
 let UNWIND_TO_LOGIN = "BackToLoginVC"
 let UNWIND_TO_GROUPES = "BackToGroups"
+let PHOTOS_SEGUE = "ToFriendPhotos"
 
 // user date constants
 let LOGGED_IN_KEY = "loggedIn"
@@ -51,6 +52,7 @@ let VK_GET_FRIENDS = "/friends.get"
 let VK_GET_GROUPS = "/groups.get"
 let VK_SEARCH_GROUPS = "/groups.search"
 let VK_GET_USERS = "/users.get"
+let VK_GET_PHOTOS = "/photos.get"
 
 // other constants
 let CLIENT_ID = "6491638"   // VK app identification number

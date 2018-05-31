@@ -56,10 +56,11 @@ class VKService {
         guard let token = UserData.instance.authToken else { return }
         
         // create URL
-        var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_USERS)
+        var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_PHOTOS)
         urlWithParams?.queryItems = [
-            URLQueryItem(name: "user_ids", value: id),
-            URLQueryItem(name: "fields", value: size.rawValue),
+            URLQueryItem(name: "owner_id", value: id),
+            URLQueryItem(name: "album_id", value: "profile"),
+            URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "v", value: "5.78"),
             URLQueryItem(name: "access_token", value: token)
         ]
@@ -68,20 +69,25 @@ class VKService {
         // make request
         Alamofire.request(url).responseData { (response) in
             
-            guard response.error == nil else { return }
-            guard let data = response.value else { return }
-            
-            guard let json = try? JSON(data: data) else { return }
-            
-            let images = json["response"].arrayValue
-            for (index, image) in images.enumerated() {
-                let imageUrl = image["photo_50"].stringValue
-                let id = image["id"].intValue
-                let image = Image(url: imageUrl, id: id)
-
-                // FriendsData.instance.friends[index].image = image
+            // check errors
+            guard response.error == nil else {return}
+            // check status code (200)
+            guard response.response?.statusCode == 200 else { return }
+            // get data
+            guard let data = response.value else {return}
+            // parse JSON
+            do {
+                let json = try JSON(data: data)
+                // get array of photos
+                let items = json["response"]["items"].arrayValue
+                // remap each element with Photo initializer
+                let photos = items.map{ VKPhoto(jsonItem: $0) }
+                // save photos
+                PhotosData.instance.photos = photos
+            } catch let error {
+                print(error.localizedDescription)
             }
-            
+            // completion handler
             completion(true)
         }
     }
@@ -136,20 +142,32 @@ class VKService {
         urlWithParams?.queryItems = [
             URLQueryItem(name: "q", value: searchText),
             URLQueryItem(name: "count", value: "10"),
-            URLQueryItem(name: "type", value: "group"),
+            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "fields", value: "description,members_count,status"),
             URLQueryItem(name: "v", value: "5.78"),
             URLQueryItem(name: "access_token", value: token)
         ]
         guard let url = urlWithParams?.url else { return }
         
-        // make request
-        Alamofire.request(url).responseJSON { (response) in
-            
+        // make requests
+        Alamofire.request(url).responseData{ (response) in
+            // check errors
             guard response.error == nil else {return}
-            guard let json = response.result.value else {return}
+            // check status code (200)
+            guard response.response?.statusCode == 200 else { return }
+            // get data
+            guard let data = response.value else {return}
+            // parse JSON
+            do{
+                let jsonParsedResponse = try JSONDecoder().decode(GroupResponse.self, from: data)
+                // fill group data
+                jsonParsedResponse.response.items.forEach {
+                    print($0.name, $0.description, $0.membersCount)
+                    GroupsData.instance.searchGroups.append($0) }
+            }
+            catch let err { print("->", err, "\nDescription:", err.localizedDescription) }
             
-            print("JSON: \(json)") // serialized json response
-            
+            // call completion handler
             completion(true)
         }
     }

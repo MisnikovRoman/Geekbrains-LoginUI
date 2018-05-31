@@ -12,4 +12,9 @@ class FriendsSecondTypeCell: UICollectionViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     
+    func setupCell(photo: VKPhoto) {
+        let url = URL(string: photo.url)
+        avatarImageView.kf.setImage(with: url)
+    }
+    
 }

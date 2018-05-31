@@ -10,6 +10,8 @@ import UIKit
 
 class SearchGroupsTableVC: UITableViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +28,21 @@ class SearchGroupsTableVC: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    @IBAction func searchBtnPressed(_ sender: Any) {
+        
+        // get data from search bar
+        guard let text = searchBar.text else { return }
+        guard text != "" else { return }
+        
+        // make search request
+        VKService.instance.loadGroupsBySearch(searchText: text) { (success) in
+            if success {
+                self.tableView.reloadData()
+            } else {
+                simpleAlert(title: "Внимание", message: "Невозможно осуществить поиск по группам", vc: self)
+            }
+        }
+    }
 }
 
 extension SearchGroupsTableVC {
@@ -33,13 +50,12 @@ extension SearchGroupsTableVC {
     override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SearchGroupData.count
+        return GroupsData.instance.searchGroups.count
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_SEARCH_GROUP, for: indexPath) as! SearchGroupCell
-        cell.nameLbl.text = SearchGroupData.getGroupes()[indexPath.row]
+        cell.setupCell(group: GroupsData.instance.searchGroups[indexPath.row])
         return cell
     }
 }
