@@ -10,7 +10,6 @@ import Foundation
 
 // closure constants
 typealias loadDataComplitionHandler = (_ success: Bool)->()
-typealias loadDataComplitionHandlerWithData = ([Image]?, Error?)->()
 
 // vk api constants
 enum VkImagesSize: String {
@@ -56,4 +55,4 @@ let VK_GET_PHOTOS = "/photos.get"
 
 // other constants
 let CLIENT_ID = "6491638"   // VK app identification number
-let APP_SCOPE = "262150"        // Битовая маска настроек доступа приложения (https://vk.com/dev/permissions)
+let APP_SCOPE = "262150"    // Битовая маска настроек доступа приложения (https://vk.com/dev/permissions)

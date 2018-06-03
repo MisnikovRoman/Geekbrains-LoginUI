@@ -36,11 +36,6 @@ class Friend: Object {
     }
 }
 
-struct Image {
-    let url: String
-    let id: Int
-}
-
  
  
  

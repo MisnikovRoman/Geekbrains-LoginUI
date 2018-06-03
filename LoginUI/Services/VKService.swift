@@ -9,12 +9,31 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class VKService {
     
     static let instance = VKService()
     
-    // загрузить список друзей с параметрами
+    // сохранения данных в базу данных
+    func saveToRealm(friends: [Friend]) {
+        do {
+            // create realm object (get access to data base)
+            let realm = try Realm()
+            // begin a write transaction on the Realm
+            realm.beginWrite()
+            // add data to base
+            realm.add(friends)
+            // commit all write operations in the current write transaction
+            try realm.commitWrite()
+        } catch {
+            print("<!> Realm error: ", error.localizedDescription)
+        }
+    }
+    
+    /**
+     Загрузить список друзей с параметрами
+     */
     func loadFriends(completion: @escaping loadDataComplitionHandler) {
         
         // get token from user data
@@ -45,6 +64,8 @@ class VKService {
             let friendsArray = items.map() { Friend(jsonItems: $0) }
             // save data to FriendsData
             FriendsData.instance.friends = friendsArray
+            // save data to Realm
+            self.saveToRealm(friends: friendsArray)
             
             completion(true)
         }
