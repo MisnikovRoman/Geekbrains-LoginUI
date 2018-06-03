@@ -163,8 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				C850CE2620B2B80300418D9E /* FriendsData.swift */,
-				C850CE2C20B2BE6900418D9E /* GroupsData.swift */,
 				C8AC233D20C02B0600BC9228 /* PhotosData.swift */,
+				C850CE2C20B2BE6900418D9E /* GroupsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -505,7 +505,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJHX98NUDV;
 				INFOPLIST_FILE = LoginUI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RFMisnikov.LoginUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -521,7 +524,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJHX98NUDV;
 				INFOPLIST_FILE = LoginUI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RFMisnikov.LoginUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

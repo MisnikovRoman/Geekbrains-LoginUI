@@ -8,18 +8,22 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
 class PhotosData {
     static let instance = PhotosData()
     var photos:[VKPhoto] = []
 }
 
-struct VKPhoto {
-    let id: Int
-    let url: String
-    let likesCount: Int
+class VKPhoto: Object {
     
-    init(jsonItem: JSON) {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var url: String = ""
+    @objc dynamic var likesCount: Int = 0
+    
+    convenience init(jsonItem: JSON) {
+        self.init()
+        
         self.id = jsonItem["id"].intValue
         let photosWithSizes = jsonItem["sizes"].arrayValue
         let firstPhotoSize = photosWithSizes[0]

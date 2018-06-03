@@ -31,6 +31,22 @@ class VKService {
         }
     }
     
+    // сохранения данных в базу данных
+    func saveToRealm(vkPhotos: [VKPhoto]) {
+        do {
+            // create realm object (get access to data base)
+            let realm = try Realm()
+            // begin a write transaction on the Realm
+            realm.beginWrite()
+            // add data to base
+            realm.add(vkPhotos)
+            // commit all write operations in the current write transaction
+            try realm.commitWrite()
+        } catch {
+            print("<!> Realm error: ", error.localizedDescription)
+        }
+    }
+    
     /**
      Загрузить список друзей с параметрами
      */
@@ -105,6 +121,8 @@ class VKService {
                 let photos = items.map{ VKPhoto(jsonItem: $0) }
                 // save photos
                 PhotosData.instance.photos = photos
+                // save photos to data base
+                self.saveToRealm(vkPhotos: photos)
             } catch let error {
                 print(error.localizedDescription)
             }
