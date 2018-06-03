@@ -9,4 +9,5 @@ target 'LoginUI' do
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod 'RealmSwift'
 end
