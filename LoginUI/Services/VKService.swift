@@ -15,7 +15,25 @@ class VKService {
     
     static let instance = VKService()
     
-    // сохранения данных в базу данных
+    // MARK: - Realm save functions
+    
+    func saveToRealm<T: Object>(_ array: [T]) {
+        
+        do {
+            // create realm object (get access to data base)
+            let realm = try Realm()
+            // begin a write transaction on the Realm
+            realm.beginWrite()
+            // add data to base
+            realm.add(array)
+            // commit all write operations in the current write transaction
+            try realm.commitWrite()
+        } catch {
+            print("<!> Realm error: ", error.localizedDescription)
+        }
+    }
+    
+    // сохранение друзей в в базу данных
     func saveToRealm(friends: [Friend]) {
         do {
             // create realm object (get access to data base)
@@ -31,7 +49,7 @@ class VKService {
         }
     }
     
-    // сохранения данных в базу данных
+    // сохранения фотографий пользователя в базу данных
     func saveToRealm(vkPhotos: [VKPhoto]) {
         do {
             // create realm object (get access to data base)
@@ -46,6 +64,24 @@ class VKService {
             print("<!> Realm error: ", error.localizedDescription)
         }
     }
+    
+    // сохранение групп в базу данных
+    func saveToRealm(groups: [Group]) {
+        do {
+            // create realm object (get access to data base)
+            let realm = try Realm()
+            // begin a write transaction on the Realm
+            realm.beginWrite()
+            // add data to base
+            realm.add(groups)
+            // commit all write operations in the current write transaction
+            try realm.commitWrite()
+        } catch {
+            print("<!> Realm error: ", error.localizedDescription)
+        }
+    }
+    
+    // MARK: - VK requests
     
     /**
      Загрузить список друзей с параметрами
@@ -81,7 +117,8 @@ class VKService {
             // save data to FriendsData
             FriendsData.instance.friends = friendsArray
             // save data to Realm
-            self.saveToRealm(friends: friendsArray)
+            //self.saveToRealm(friends: friendsArray)
+            self.saveToRealm(friendsArray)
             
             completion(true)
         }
@@ -122,7 +159,7 @@ class VKService {
                 // save photos
                 PhotosData.instance.photos = photos
                 // save photos to data base
-                self.saveToRealm(vkPhotos: photos)
+                self.saveToRealm(photos)
             } catch let error {
                 print(error.localizedDescription)
             }
@@ -160,8 +197,12 @@ class VKService {
                 let jsonParsedResponse = try JSONDecoder().decode(GroupResponse.self, from: data)
                 // fill group data
                 jsonParsedResponse.response.items.forEach {
-                    print($0.name, $0.description, $0.membersCount)
-                    GroupsData.instance.groups.append($0) }
+                    // print($0.name, $0.description, $0.membersCount)
+                    // save data to instance
+                    GroupsData.instance.groups.append($0)
+                }
+                // save data to Realm
+                self.saveToRealm(GroupsData.instance.groups)
             }
             catch let err { print("->", err, "\nDescription:", err.localizedDescription) }
             
