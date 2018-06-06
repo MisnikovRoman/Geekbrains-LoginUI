@@ -25,7 +25,6 @@ class FriendsCollectionVC: UICollectionViewController {
     }
     
     func loadPhotos() {
-        
         guard let id = Int(userID) else { return }
         guard id > 0 else { return }
         
@@ -52,13 +51,17 @@ extension FriendsCollectionVC {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return PhotosData.instance.photos.count
+        guard let photos = VKRepository().loadData(type: VKPhoto.self) else { return 0 }
+        return photos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_FRIEND_2, for: indexPath) as! FriendsSecondTypeCell
-        cell.setupCell(photo: PhotosData.instance.photos[indexPath.item])
+        // load data from Realm DB
+        guard let photos = VKRepository().loadData(type: VKPhoto.self) else { return UICollectionViewCell() }
+        // setup each cell
+        cell.setupCell(photo: photos[indexPath.item])
+        
         return cell
     }
 }

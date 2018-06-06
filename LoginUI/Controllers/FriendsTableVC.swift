@@ -61,14 +61,20 @@ extension FriendsTableVC {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return FriendsData.instance.friends.count
+        // load friend from realm db
+        guard let friends = VKRepository().loadData(type: Friend.self) else { return 0 }
+        return friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FRIEND) as! FriendCell
-        cell.setupCell(with: FriendsData.instance.friends[indexPath.row])
+        // repository instance
+        let repository = VKRepository()
+        // load friend from realm db
+        guard let friends = repository.loadData(type: Friend.self) else { return UITableViewCell() }
+        // setup cell
+        cell.setupCell(with: friends[indexPath.row])
         
         return cell
     }

@@ -30,7 +30,7 @@ class GroupsTableVC: UITableViewController {
         }
     }
     
-    
+    // TODO: - ⚠️ add segue to start screen
     @IBAction func unwindFromSearchGroups (_ segue: UIStoryboardSegue) {
         
         // check name of segue
@@ -56,14 +56,17 @@ extension GroupsTableVC {
     override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GroupsData.instance.groups.count
+        guard let groups = VKRepository().loadData(type: Group.self) else { return 0 }
+        return groups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_GROUP, for: indexPath) as! GroupCell
-        // get data for each group from GroupsData2
-        let group = GroupsData.instance.groups[indexPath.row]
-        cell.setupGroupCell(with: group)
+        // get data for each group from Realm DB
+        guard let groups = VKRepository().loadData(type: Group.self) else { return UITableViewCell() }
+        // setup cell
+        cell.setupGroupCell(with: groups[indexPath.row])
+        
         return cell
     }
     
@@ -80,6 +83,7 @@ extension GroupsTableVC {
 //            
 //        }
 //    }
+    
 }
 
 
