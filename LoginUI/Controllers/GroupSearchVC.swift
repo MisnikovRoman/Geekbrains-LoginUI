@@ -8,26 +8,15 @@
 
 import UIKit
 
-class SearchGroupsTableVC: UITableViewController {
+class GroupSearchVC: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        VKService.instance.loadGroupsBySearch(searchText: "iphone") { (success) in
-            let text:String
-            if success {
-                text = "Группы пользователя найдены загружены"
-            } else {
-                text = "Ошибка загрузки групп"
-            }
-            let alert = UIAlertController(title: "Поздравляем", message: text, preferredStyle: .alert)
-            let action = UIAlertAction(title: "Продолжить", style: .cancel, handler: nil)
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
-        }
     }
+    
     @IBAction func searchBtnPressed(_ sender: Any) {
         
         // get data from search bar
@@ -45,17 +34,27 @@ class SearchGroupsTableVC: UITableViewController {
     }
 }
 
-extension SearchGroupsTableVC {
+extension GroupSearchVC {
     
     override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GroupsData.instance.searchGroups.count
+        // create repository
+        let repo = VKRepository()
+        // load groups
+        guard let searchGroups = repo.loadData(type: Group.self, groupPredicate: .searchGroup) else { return 0 }
+        // return groups count
+        return searchGroups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_SEARCH_GROUP, for: indexPath) as! SearchGroupCell
-        cell.setupCell(group: GroupsData.instance.searchGroups[indexPath.row])
+        // load from data base
+        let repo = VKRepository()
+        guard let searchGroups = repo.loadData(type: Group.self, groupPredicate: .searchGroup) else { return UITableViewCell() }
+        // configure cell with loaded data
+        cell.setupCell(group: searchGroups[indexPath.row])
+        // return configured cell
         return cell
     }
 }

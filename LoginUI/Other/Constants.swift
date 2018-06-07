@@ -53,6 +53,10 @@ let VK_SEARCH_GROUPS = "/groups.search"
 let VK_GET_USERS = "/users.get"
 let VK_GET_PHOTOS = "/photos.get"
 
+// Realm data base constants
+let USER_GROUP = "user_group"
+let SEARCH_GROUP = "search_group"
+
 // other constants
 let CLIENT_ID = "6491638"   // VK app identification number
 let APP_SCOPE = "262150"    // Битовая маска настроек доступа приложения (https://vk.com/dev/permissions)

@@ -25,6 +25,7 @@ class Group: Object, Decodable {
     @objc dynamic var groupDescription: String = ""
     @objc dynamic var membersCount: Int = 0
     @objc dynamic var status: String = ""
+    @objc dynamic var type: String = ""
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,6 +34,7 @@ class Group: Object, Decodable {
         case groupDescription = "description"
         case membersCount = "members_count"
         case status
+        case type
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class FriendsCollectionVC: UICollectionViewController {
+class FriendPhotosVC: UICollectionViewController {
    
     var userID: String!
     
@@ -43,7 +43,7 @@ class FriendsCollectionVC: UICollectionViewController {
     }
 }
 
-extension FriendsCollectionVC {
+extension FriendPhotosVC {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -51,14 +51,14 @@ extension FriendsCollectionVC {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let photos = VKRepository().loadData(type: VKPhoto.self) else { return 0 }
+        guard let photos = VKRepository().loadData(type: VKPhoto.self, groupPredicate: nil) else { return 0 }
         return photos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_FRIEND_2, for: indexPath) as! FriendsSecondTypeCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_FRIEND_2, for: indexPath) as! FriendPhotoCell
         // load data from Realm DB
-        guard let photos = VKRepository().loadData(type: VKPhoto.self) else { return UICollectionViewCell() }
+        guard let photos = VKRepository().loadData(type: VKPhoto.self, groupPredicate: nil) else { return UICollectionViewCell() }
         // setup each cell
         cell.setupCell(photo: photos[indexPath.item])
         

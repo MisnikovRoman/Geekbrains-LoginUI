@@ -38,7 +38,11 @@ class VKService {
         // make request
         Alamofire.request(url).responseData { (response) in
 
+            // check errors
             guard response.error == nil else {return}
+            // check status code (200)
+            guard response.response?.statusCode == 200 else { return }
+            // get data
             guard let data = response.value else {return}
             
             // use swifty json framework
@@ -52,7 +56,7 @@ class VKService {
             // create VKRepository instance
             let repository = VKRepository()
             // save to Realm data base
-            repository.savaData(data: friendsArray)
+            repository.savaData(data: friendsArray, groupPredicate: nil)
             
             completion(true)
         }
@@ -95,7 +99,7 @@ class VKService {
                 // create VKRepository instance
                 let repository = VKRepository()
                 // save to Realm data base
-                repository.savaData(data: photos)
+                repository.savaData(data: photos, groupPredicate: nil)
             } catch let error {
                 print(error.localizedDescription)
             }
@@ -130,17 +134,14 @@ class VKService {
             guard let data = response.value else {return}
             // parse JSON
             do{
+                // use standart decoding method
                 let jsonParsedResponse = try JSONDecoder().decode(GroupResponse.self, from: data)
-                // fill group data
-                jsonParsedResponse.response.items.forEach {
-                    // print($0.name, $0.description, $0.membersCount)
-                    // save data to instance
-                    GroupsData.instance.groups.append($0)
-                }
+                // add group type
+                jsonParsedResponse.response.items.forEach { $0.type = USER_GROUP }
                 // create VKRepository instance
                 let repository = VKRepository()
                 // save to Realm data base
-                repository.savaData(data: GroupsData.instance.groups)
+                repository.savaData(data: jsonParsedResponse.response.items, groupPredicate: .userGroup)
             }
             catch let err { print("->", err, "\nDescription:", err.localizedDescription) }
             
@@ -178,10 +179,10 @@ class VKService {
             // parse JSON
             do{
                 let jsonParsedResponse = try JSONDecoder().decode(GroupResponse.self, from: data)
-                // fill group data
-                jsonParsedResponse.response.items.forEach {
-                    print($0.name, $0.description, $0.membersCount)
-                    GroupsData.instance.searchGroups.append($0) }
+                // add group type (will be saved in database)
+                jsonParsedResponse.response.items.forEach { $0.type = SEARCH_GROUP }
+                // save to Realm
+                VKRepository().savaData(data: jsonParsedResponse.response.items, groupPredicate: .searchGroup)
             }
             catch let err { print("->", err, "\nDescription:", err.localizedDescription) }
             

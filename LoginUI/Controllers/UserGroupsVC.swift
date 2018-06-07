@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupsTableVC: UITableViewController {
+class UserGroupsVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class GroupsTableVC: UITableViewController {
         // check name of segue
         guard segue.identifier == UNWIND_TO_GROUPES else { return }
         // get controller to use his parameters (eg. tableView)
-        let searchGroupsController = segue.source as! SearchGroupsTableVC
+        let searchGroupsController = segue.source as! GroupSearchVC
         // get indexPath
 //        guard let indexPath = searchGroupsController.tableView.indexPathForSelectedRow else { return }
 //        // get name of group to add
@@ -51,19 +51,19 @@ class GroupsTableVC: UITableViewController {
 }
 
 // setup table view
-extension GroupsTableVC {
+extension UserGroupsVC {
 
     override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let groups = VKRepository().loadData(type: Group.self) else { return 0 }
+        guard let groups = VKRepository().loadData(type: Group.self, groupPredicate: .userGroup)  else { return 0 }
         return groups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_GROUP, for: indexPath) as! GroupCell
         // get data for each group from Realm DB
-        guard let groups = VKRepository().loadData(type: Group.self) else { return UITableViewCell() }
+        guard let groups = VKRepository().loadData(type: Group.self, groupPredicate: .userGroup) else { return UITableViewCell() }
         // setup cell
         cell.setupGroupCell(with: groups[indexPath.row])
         

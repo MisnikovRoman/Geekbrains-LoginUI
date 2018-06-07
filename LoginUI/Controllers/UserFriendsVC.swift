@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FriendsTableVC: UITableViewController {
+class UserFriendsVC: UITableViewController {
 
     var selectedUserID: String!
     
@@ -43,7 +43,7 @@ class FriendsTableVC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let photosVC = segue.destination as? FriendsCollectionVC {
+        if let photosVC = segue.destination as? FriendPhotosVC {
             // pass data to the next view controller
             photosVC.userID = selectedUserID
         }
@@ -53,7 +53,7 @@ class FriendsTableVC: UITableViewController {
 
 
 // configure table view
-extension FriendsTableVC {
+extension UserFriendsVC {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -62,7 +62,7 @@ extension FriendsTableVC {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // load friend from realm db
-        guard let friends = VKRepository().loadData(type: Friend.self) else { return 0 }
+        guard let friends = VKRepository().loadData(type: Friend.self, groupPredicate: nil) else { return 0 }
         return friends.count
     }
     
@@ -72,7 +72,7 @@ extension FriendsTableVC {
         // repository instance
         let repository = VKRepository()
         // load friend from realm db
-        guard let friends = repository.loadData(type: Friend.self) else { return UITableViewCell() }
+        guard let friends = repository.loadData(type: Friend.self, groupPredicate: nil) else { return UITableViewCell() }
         // setup cell
         cell.setupCell(with: friends[indexPath.row])
         
@@ -80,8 +80,11 @@ extension FriendsTableVC {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // get friends from data base
+        guard let friends = VKRepository().loadData(type: Friend.self, groupPredicate: nil) else { return }
         // get selected user id
-        let userID = FriendsData.instance.friends[indexPath.row].id
+        let userID = friends[indexPath.row].id
         
         self.selectedUserID = "\(userID)"
         performSegue(withIdentifier: PHOTOS_SEGUE, sender: nil)
