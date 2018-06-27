@@ -8,6 +8,38 @@
 
 import Foundation
 
+struct VKComment: Decodable {
+    let count: Int = 0
+    let groups_can_post: Bool = false
+    let can_post: Int = 0
+}
+
+struct VKLike: Decodable {
+    let count: Int = 0
+    let user_likes: Int = 0
+    let can_like: Int = 0
+    let can_publish: Int = 0
+}
+
+struct VKRepost: Decodable {
+    let count: Int = 0
+    let user_reposted: Int = 0
+}
+
+struct VKView: Decodable {
+    let count: Int = 0
+}
+
+class News: Decodable {
+    var source_id: Int = 0
+    var date: Int = 0
+    var text: String = ""
+    var comments: [VKComment] = []
+    var likes: [VKLike] = []
+    var reposts: [VKRepost] = []
+    var views: [VKView] = []
+}
+
 /*
  Поле items содержит массив объектов, каждый из которых соответствует одной новости в ленте. Каждый из объектов содержит поля:
      type — тип списка новости, соответствующий одному из значений параметра filters;
@@ -71,6 +103,4 @@ import Foundation
 */
 
 
-class News {
-    
-}
+

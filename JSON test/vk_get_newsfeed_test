@@ -1,0 +1,152 @@
+{
+    "response": {
+        "items": [
+            {
+                "type": "post",
+                "source_id": -33393308,
+                "date": 1530079729,
+                "post_id": 481673,
+                "post_type": "post",
+                "text": "Доброе утро среды. \n\n«ВКонтакте» объявила о запуске платёжной системы VK Pay — vc.ru/40894\n\nФНС предложила лишать статуса ИП из-за долгов по налогам — vc.ru/40895\n\nВласти отказались от идеи продавать лекарства в супермаркетах — vc.ru/40898\n\n«Ведомости»: «Сбербанк» без разрешения использовал товарный знак FIFA для рекламы вклада — vc.ru/40899\n\nПлатёжная система «Юнистрим» продолжает предоставлять услуги денежных переводов на Украину в обход санкций — «Коммерсантъ» https://goo.gl/Sh5Boh\n\nРоссийские онлайн-кинотеатры заметили спад трафика во время Чемпионата мира по футболу — «Коммерсантъ» https://goo.gl/TXAkQm",
+                "marked_as_ads": 0,
+                "attachments": [
+                    {
+                        "type": "photo",
+                        "photo": {
+                            "id": 456248609,
+                            "album_id": -7,
+                            "owner_id": -33393308,
+                            "user_id": 100,
+                            "sizes": [
+                                {
+                                    "type": "m",
+                                    "url": "https://sun1-20.userapi.com/c635100/v635100416/429b9/tIKLL734P3I.jpg",
+                                    "width": 130,
+                                    "height": 130
+                                },
+                                {
+                                    "type": "o",
+                                    "url": "https://sun1-2.userapi.com/c635100/v635100416/429bc/ShOVKWM78Tc.jpg",
+                                    "width": 130,
+                                    "height": 130
+                                },
+                                {
+                                    "type": "p",
+                                    "url": "https://sun1-2.userapi.com/c635100/v635100416/429bd/o-t3yb4Vd9c.jpg",
+                                    "width": 200,
+                                    "height": 200
+                                },
+                                {
+                                    "type": "q",
+                                    "url": "https://sun1-4.userapi.com/c635100/v635100416/429be/HOU3-uo-KjI.jpg",
+                                    "width": 320,
+                                    "height": 320
+                                },
+                                {
+                                    "type": "r",
+                                    "url": "https://sun1-11.userapi.com/c635100/v635100416/429bf/zTH50JeuDxQ.jpg",
+                                    "width": 510,
+                                    "height": 510
+                                },
+                                {
+                                    "type": "s",
+                                    "url": "https://sun1-17.userapi.com/c635100/v635100416/429b8/sCSp_4-YAqY.jpg",
+                                    "width": 75,
+                                    "height": 75
+                                },
+                                {
+                                    "type": "x",
+                                    "url": "https://sun1-8.userapi.com/c635100/v635100416/429ba/3m8vX35x5Cw.jpg",
+                                    "width": 604,
+                                    "height": 604
+                                },
+                                {
+                                    "type": "y",
+                                    "url": "https://sun1-12.userapi.com/c635100/v635100416/429bb/6KZU-ZCbeyo.jpg",
+                                    "width": 800,
+                                    "height": 800
+                                }
+                            ],
+                            "text": "Доброе утро среды. \n\n«ВКонтакте» объявила о запуске платёжной системы VK Pay — vc.ru/40894\n\nФНС предложила лишать статуса ИП из-за долгов по налогам — vc.ru/40895\n\nВласти отказались от идеи продавать лекарства в супермаркетах — vc.ru/40898\n\n«Ведомости»: «Сбербанк» без разрешения использовал товарный знак FIFA для рекламы вклада — vc.ru/40899\n\nПлатёжная система «Юнистрим» продолжает предоставлять услуги денежных переводов на Украину в обход санкций — «Коммерсантъ» https://goo.gl/Sh5Boh\n\nРоссийские онлайн-кинотеатры заметили спад трафика во время Чемпионата мира по футболу — «Коммерсантъ» https://goo.gl/TXAkQm",
+                            "date": 1530079729,
+                            "post_id": 481673,
+                            "access_key": "23486cd3f1387d159d"
+                        }
+                    }
+                ],
+                "post_source": {
+                    "type": "api"
+                },
+                "comments": {
+                    "count": 0,
+                    "groups_can_post": true,
+                    "can_post": 0
+                },
+                "likes": {
+                    "count": 1,
+                    "user_likes": 0,
+                    "can_like": 1,
+                    "can_publish": 1
+                },
+                "reposts": {
+                    "count": 0,
+                    "user_reposted": 0
+                },
+                "views": {
+                    "count": 1726
+                }
+            }
+        ],
+        "profiles": [],
+        "groups": [
+            {
+                "id": 33393308,
+                "name": "Стартапы и бизнес",
+                "screen_name": "vcru",
+                "is_closed": 0,
+                "type": "page",
+                "is_admin": 0,
+                "is_member": 1,
+                "photo_50": "https://pp.userapi.com/c627624/v627624388/2decd/oBQ44T8CRHI.jpg?ava=1",
+                "photo_100": "https://pp.userapi.com/c627624/v627624388/2decc/wmDY4pK3Ous.jpg?ava=1",
+                "photo_200": "https://pp.userapi.com/c627624/v627624388/2deca/7H_UNsHmTQ4.jpg?ava=1"
+            },
+            {
+                "id": 4537617,
+                "name": "The Village Петербург",
+                "screen_name": "villagespb",
+                "is_closed": 0,
+                "type": "page",
+                "is_admin": 0,
+                "is_member": 1,
+                "photo_50": "https://pp.userapi.com/c304400/g4537617/e_0012e71b.jpg?ava=1",
+                "photo_100": "https://pp.userapi.com/c304400/g4537617/d_f12de49b.jpg?ava=1",
+                "photo_200": "https://pp.userapi.com/c304400/g4537617/d_f12de49b.jpg?ava=1"
+            },
+            {
+                "id": 54983747,
+                "name": "PlayStation Plus",
+                "screen_name": "psplusru",
+                "is_closed": 0,
+                "type": "page",
+                "is_admin": 0,
+                "is_member": 1,
+                "photo_50": "https://pp.userapi.com/c824500/v824500676/15896b/xuj9eUjJDQU.jpg?ava=1",
+                "photo_100": "https://pp.userapi.com/c824500/v824500676/15896a/7PUO4MxVCsU.jpg?ava=1",
+                "photo_200": "https://pp.userapi.com/c824500/v824500676/158969/hRmhjmSBF2A.jpg?ava=1"
+            },
+            {
+                "id": 30022666,
+                "name": "Лепра",
+                "screen_name": "leprum",
+                "is_closed": 0,
+                "type": "page",
+                "is_admin": 0,
+                "is_member": 1,
+                "photo_50": "https://pp.userapi.com/c302205/v302205950/867b/39uugv9OcGo.jpg?ava=1",
+                "photo_100": "https://pp.userapi.com/c302205/v302205950/867a/dnfDZPh3Zws.jpg?ava=1",
+                "photo_200": "https://pp.userapi.com/c302205/v302205950/8679/zXnYpNHXmes.jpg?ava=1"
+            }
+        ],
+        "next_from": "1/5_-33393308_481673:773231027"
+    }

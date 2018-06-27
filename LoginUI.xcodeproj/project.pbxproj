@@ -174,10 +174,10 @@
 		C850CE2520B2B7D300418D9E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C88067CF20C85C210066C28A /* VKRepository.swift */,
 				C850CE2620B2B80300418D9E /* FriendsData.swift */,
 				C8AC233D20C02B0600BC9228 /* PhotosData.swift */,
 				C850CE2C20B2BE6900418D9E /* GroupsData.swift */,
-				C88067CF20C85C210066C28A /* VKRepository.swift */,
 				C8D84A2620E2C3B400A6532F /* News.swift */,
 			);
 			path = Model;

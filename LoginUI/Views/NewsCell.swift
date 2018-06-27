@@ -15,7 +15,9 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var textLbl: UILabel!
     @IBOutlet weak var likesLbl: UILabel!
-    @IBOutlet weak var imagesLbl: UILabel!
+    @IBOutlet weak var commentsLbl: UILabel!
+    @IBOutlet weak var repostsLbl: UILabel!
+    @IBOutlet weak var viewsLbl: UILabel!
     
     func setupCell(with: News) {
         
