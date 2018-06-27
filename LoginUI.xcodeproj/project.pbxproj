@@ -29,12 +29,16 @@
 		C89AAFCE20A5A47300E3BC93 /* UserFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCD20A5A47300E3BC93 /* UserFriendsVC.swift */; };
 		C89AAFD020A5A48A00E3BC93 /* FriendPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AAFCF20A5A48A00E3BC93 /* FriendPhotosVC.swift */; };
 		C8AC233E20C02B0600BC9228 /* PhotosData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC233D20C02B0600BC9228 /* PhotosData.swift */; };
+		C8C14A9F20CDA2F90009945A /* String-dateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C14A9E20CDA2F90009945A /* String-dateTransform.swift */; };
 		C8C57DBF20BE9AE600ABC6F9 /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C57DBE20BE9AE600ABC6F9 /* SimpleAlert.swift */; };
 		C8C810C120A983F100145B83 /* UserGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C020A983F100145B83 /* UserGroupsVC.swift */; };
 		C8C810C320A9841100145B83 /* GroupSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810C220A9841100145B83 /* GroupSearchVC.swift */; };
 		C8C810CB20A998A400145B83 /* UIBarButtonItem-tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */; };
 		C8C810CF20A99ABE00145B83 /* UINavigationController-backTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */; };
 		C8CB2F4120BC340800DB9E96 /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CB2F4020BC340800DB9E96 /* VKService.swift */; };
+		C8D84A2320E2C0FB00A6532F /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2220E2C0FB00A6532F /* NewsVC.swift */; };
+		C8D84A2520E2C23600A6532F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2420E2C23600A6532F /* NewsCell.swift */; };
+		C8D84A2720E2C3B400A6532F /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2620E2C3B400A6532F /* News.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,12 +68,16 @@
 		C89AAFCD20A5A47300E3BC93 /* UserFriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFriendsVC.swift; sourceTree = "<group>"; };
 		C89AAFCF20A5A48A00E3BC93 /* FriendPhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosVC.swift; sourceTree = "<group>"; };
 		C8AC233D20C02B0600BC9228 /* PhotosData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosData.swift; sourceTree = "<group>"; };
+		C8C14A9E20CDA2F90009945A /* String-dateTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-dateTransform.swift"; sourceTree = "<group>"; };
 		C8C57DBE20BE9AE600ABC6F9 /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 		C8C810C020A983F100145B83 /* UserGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupsVC.swift; sourceTree = "<group>"; };
 		C8C810C220A9841100145B83 /* GroupSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSearchVC.swift; sourceTree = "<group>"; };
 		C8C810CA20A998A400145B83 /* UIBarButtonItem-tintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-tintColor.swift"; sourceTree = "<group>"; };
 		C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController-backTintColor.swift"; sourceTree = "<group>"; };
 		C8CB2F4020BC340800DB9E96 /* VKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKService.swift; sourceTree = "<group>"; };
+		C8D84A2220E2C0FB00A6532F /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		C8D84A2420E2C23600A6532F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		C8D84A2620E2C3B400A6532F /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 				C8C810CE20A99ABE00145B83 /* UINavigationController-backTintColor.swift */,
 				C893E9D020B30C2500BBB214 /* ManualSwitchViewController.swift */,
 				C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */,
+				C8C14A9E20CDA2F90009945A /* String-dateTransform.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,8 +149,8 @@
 				C850CE2520B2B7D300418D9E /* Model */,
 				C850CE2220B2B55B00418D9E /* Views */,
 				C87D212620A58FA600C5A830 /* Controllers */,
-				C800615720A1E12600CCA6B3 /* Extensions */,
 				C8CB2F3F20BC33EF00DB9E96 /* Services */,
+				C800615720A1E12600CCA6B3 /* Extensions */,
 				C87D212720A58FE700C5A830 /* Other */,
 				C84B9A2520A0DF16003D01A9 /* Assets.xcassets */,
 				C84B9A2A20A0DF16003D01A9 /* Info.plist */,
@@ -157,6 +166,7 @@
 				C850CE2E20B2BFBA00418D9E /* GroupCell.swift */,
 				C850CE3220B2EFCC00418D9E /* SearchGroupCell.swift */,
 				C8C57DBE20BE9AE600ABC6F9 /* SimpleAlert.swift */,
+				C8D84A2420E2C23600A6532F /* NewsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 				C8AC233D20C02B0600BC9228 /* PhotosData.swift */,
 				C850CE2C20B2BE6900418D9E /* GroupsData.swift */,
 				C88067CF20C85C210066C28A /* VKRepository.swift */,
+				C8D84A2620E2C3B400A6532F /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +192,7 @@
 				C89AAFCF20A5A48A00E3BC93 /* FriendPhotosVC.swift */,
 				C8C810C020A983F100145B83 /* UserGroupsVC.swift */,
 				C8C810C220A9841100145B83 /* GroupSearchVC.swift */,
+				C8D84A2220E2C0FB00A6532F /* NewsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -339,20 +351,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84B9A2120A0DF15003D01A9 /* LoginVC.swift in Sources */,
+				C8D84A2520E2C23600A6532F /* NewsCell.swift in Sources */,
 				C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */,
 				C89AAFCE20A5A47300E3BC93 /* UserFriendsVC.swift in Sources */,
 				C850CE2720B2B80300418D9E /* FriendsData.swift in Sources */,
 				C8C810C120A983F100145B83 /* UserGroupsVC.swift in Sources */,
 				C89AAFD020A5A48A00E3BC93 /* FriendPhotosVC.swift in Sources */,
 				C88067D020C85C210066C28A /* VKRepository.swift in Sources */,
+				C8D84A2320E2C0FB00A6532F /* NewsVC.swift in Sources */,
 				C850CE3320B2EFCC00418D9E /* SearchGroupCell.swift in Sources */,
 				C80087A220BD90DF00769880 /* UIColor-CustomColors.swift in Sources */,
 				C8C810C320A9841100145B83 /* GroupSearchVC.swift in Sources */,
 				C850CE2F20B2BFBA00418D9E /* GroupCell.swift in Sources */,
 				C84B9A1F20A0DF15003D01A9 /* AppDelegate.swift in Sources */,
+				C8C14A9F20CDA2F90009945A /* String-dateTransform.swift in Sources */,
 				C850CE2420B2B57C00418D9E /* FriendCell.swift in Sources */,
 				C87D212B20A5904B00C5A830 /* UserData.swift in Sources */,
 				C87D212920A58FF800C5A830 /* Constants.swift in Sources */,
+				C8D84A2720E2C3B400A6532F /* News.swift in Sources */,
 				C8CB2F4120BC340800DB9E96 /* VKService.swift in Sources */,
 				C8C57DBF20BE9AE600ABC6F9 /* SimpleAlert.swift in Sources */,
 				C850CE2B20B2BC6D00418D9E /* FriendPhotoCell.swift in Sources */,

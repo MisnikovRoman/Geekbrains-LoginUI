@@ -34,7 +34,7 @@ class WebVC: UIViewController {
                 URLQueryItem(name: "client_id", value: CLIENT_ID),
                 URLQueryItem(name: "redirect_uri", value: URL_VK_REDIRECT),
                 URLQueryItem(name: "display", value: "mobile"),
-                URLQueryItem(name: "scope", value: "262150"),
+                URLQueryItem(name: "scope", value: APP_SCOPE),
                 URLQueryItem(name: "v", value: "5.78"),
                 URLQueryItem(name: "response_type", value: "token")]
         // get URL
