@@ -15,12 +15,19 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var textLbl: UILabel!
     @IBOutlet weak var likesLbl: UILabel!
-    @IBOutlet weak var imagesLbl: UILabel!
+    @IBOutlet weak var repostsLbl: UILabel!
+    @IBOutlet weak var commentsLbl: UILabel!
+    @IBOutlet weak var viewsLbl: UILabel!
     
     func setupCell(with item: NewsItem) {
         avatarLbl.text = "URL: " + item.avatarUrl
         authorLbl.text = "From: " + item.author
-        textLbl.text = "Body: " + item.body
-        dateLbl.text = "Date:" + item.date.description
+        let postTime = getTimeToNow(from: item.date)
+        dateLbl.text = postTime
+        textLbl.text = item.body
+        likesLbl.text = "❤️  " + String(item.likesCount)
+        repostsLbl.text = "↩️  " + String(item.repostsCount)
+        commentsLbl.text = "🗣  " + String(item.commentsCount)
+        viewsLbl.text = "👁  " + String(item.viewsCount)
     }
 }

@@ -201,7 +201,7 @@ class VKService {
         var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_NEWSFEED)
         urlWithParams?.queryItems = [
             URLQueryItem(name: "filters", value: "post"),
-            URLQueryItem(name: "count", value: "10"),
+            URLQueryItem(name: "count", value: "50"),
             URLQueryItem(name: "v", value: "5.78"),
             URLQueryItem(name: "access_token", value: token)
         ]

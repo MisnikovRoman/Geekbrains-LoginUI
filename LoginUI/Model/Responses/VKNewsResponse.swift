@@ -27,7 +27,7 @@ struct VKNewsResponse: Decodable {
                     var id: Int
                     var albumId: Int
                     var ownerId: Int
-                    var userId: Int
+                    var userId: Int?
                     var sizes: [VKSize]
                     var text: String
                     var date: Date
