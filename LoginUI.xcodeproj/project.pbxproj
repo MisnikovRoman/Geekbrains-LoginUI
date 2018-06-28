@@ -38,7 +38,9 @@
 		C8CB2F4120BC340800DB9E96 /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CB2F4020BC340800DB9E96 /* VKService.swift */; };
 		C8D84A2320E2C0FB00A6532F /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2220E2C0FB00A6532F /* NewsVC.swift */; };
 		C8D84A2520E2C23600A6532F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2420E2C23600A6532F /* NewsCell.swift */; };
-		C8D84A2720E2C3B400A6532F /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2620E2C3B400A6532F /* News.swift */; };
+		C8D84A2720E2C3B400A6532F /* VKNewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2620E2C3B400A6532F /* VKNewsResponse.swift */; };
+		C8F1026B20E5161300670ABC /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1026A20E5161300670ABC /* NewsItem.swift */; };
+		C8F1026D20E5166A00670ABC /* OtherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1026C20E5166A00670ABC /* OtherFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +79,9 @@
 		C8CB2F4020BC340800DB9E96 /* VKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKService.swift; sourceTree = "<group>"; };
 		C8D84A2220E2C0FB00A6532F /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		C8D84A2420E2C23600A6532F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
-		C8D84A2620E2C3B400A6532F /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		C8D84A2620E2C3B400A6532F /* VKNewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKNewsResponse.swift; sourceTree = "<group>"; };
+		C8F1026A20E5161300670ABC /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		C8F1026C20E5166A00670ABC /* OtherFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,11 +178,12 @@
 		C850CE2520B2B7D300418D9E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C8F1026920E515EA00670ABC /* Responses */,
 				C850CE2620B2B80300418D9E /* FriendsData.swift */,
 				C8AC233D20C02B0600BC9228 /* PhotosData.swift */,
 				C850CE2C20B2BE6900418D9E /* GroupsData.swift */,
 				C88067CF20C85C210066C28A /* VKRepository.swift */,
-				C8D84A2620E2C3B400A6532F /* News.swift */,
+				C8F1026A20E5161300670ABC /* NewsItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				C87D212A20A5904B00C5A830 /* UserData.swift */,
 				C87D212820A58FF800C5A830 /* Constants.swift */,
+				C8F1026C20E5166A00670ABC /* OtherFunctions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -212,6 +218,14 @@
 				C8CB2F4020BC340800DB9E96 /* VKService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C8F1026920E515EA00670ABC /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C8D84A2620E2C3B400A6532F /* VKNewsResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +369,7 @@
 				C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */,
 				C89AAFCE20A5A47300E3BC93 /* UserFriendsVC.swift in Sources */,
 				C850CE2720B2B80300418D9E /* FriendsData.swift in Sources */,
+				C8F1026B20E5161300670ABC /* NewsItem.swift in Sources */,
 				C8C810C120A983F100145B83 /* UserGroupsVC.swift in Sources */,
 				C89AAFD020A5A48A00E3BC93 /* FriendPhotosVC.swift in Sources */,
 				C88067D020C85C210066C28A /* VKRepository.swift in Sources */,
@@ -368,9 +383,10 @@
 				C850CE2420B2B57C00418D9E /* FriendCell.swift in Sources */,
 				C87D212B20A5904B00C5A830 /* UserData.swift in Sources */,
 				C87D212920A58FF800C5A830 /* Constants.swift in Sources */,
-				C8D84A2720E2C3B400A6532F /* News.swift in Sources */,
+				C8D84A2720E2C3B400A6532F /* VKNewsResponse.swift in Sources */,
 				C8CB2F4120BC340800DB9E96 /* VKService.swift in Sources */,
 				C8C57DBF20BE9AE600ABC6F9 /* SimpleAlert.swift in Sources */,
+				C8F1026D20E5166A00670ABC /* OtherFunctions.swift in Sources */,
 				C850CE2B20B2BC6D00418D9E /* FriendPhotoCell.swift in Sources */,
 				C8AC233E20C02B0600BC9228 /* PhotosData.swift in Sources */,
 				C893E9D120B30C2500BBB214 /* ManualSwitchViewController.swift in Sources */,

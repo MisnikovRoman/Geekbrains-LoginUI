@@ -17,7 +17,10 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var imagesLbl: UILabel!
     
-    func setupCell(with: News) {
-        
+    func setupCell(with item: NewsItem) {
+        avatarLbl.text = "URL: " + item.avatarUrl
+        authorLbl.text = "From: " + item.author
+        textLbl.text = "Body: " + item.body
+        dateLbl.text = "Date:" + item.date.description
     }
 }

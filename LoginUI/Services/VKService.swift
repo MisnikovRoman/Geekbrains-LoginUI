@@ -14,6 +14,7 @@ import RealmSwift
 class VKService {
     
     static let instance = VKService()
+    
     // MARK: - VK requests
     
     /**
@@ -191,4 +192,74 @@ class VKService {
         }
     }
     
+    //=TEMP====================================================================
+    func loadNewsfeed(completion: @escaping NewsComplitionHandler) {
+        // get token from user data
+        guard let token = UserData.instance.authToken else { return }
+        
+        // create URL
+        var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_NEWSFEED)
+        urlWithParams?.queryItems = [
+            URLQueryItem(name: "filters", value: "post"),
+            URLQueryItem(name: "count", value: "10"),
+            URLQueryItem(name: "v", value: "5.78"),
+            URLQueryItem(name: "access_token", value: token)
+        ]
+        guard let url = urlWithParams?.url else { return }
+        
+        // make requests
+        Alamofire.request(url).responseData { (dataResponse) in
+            // check errors
+            guard dataResponse.error == nil else {return}
+            // check status code (200)
+            guard dataResponse.response?.statusCode == 200 else { return }
+            // get data
+            guard let data = dataResponse.value else {return}
+            // parse JSON
+            do {
+                let VKDecoder = JSONDecoder()
+                VKDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                VKDecoder.dateDecodingStrategy = .secondsSince1970
+                
+                let response = try VKDecoder.decode(VKNewsResponse.self, from: data)
+                print("✅ Parcing success")
+                completion(response)
+            } catch let err {
+                print("⚠️ Parcing error:", err, "\nDescription:", err.localizedDescription)
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@ import Foundation
 
 // closure constants
 typealias loadDataComplitionHandler = (_ success: Bool)->()
+typealias NewsComplitionHandler = (VKNewsResponse)->()
 
 // vk api constants
 enum VkImagesSize: String {
@@ -53,6 +54,7 @@ let VK_GET_GROUPS = "/groups.get"
 let VK_SEARCH_GROUPS = "/groups.search"
 let VK_GET_USERS = "/users.get"
 let VK_GET_PHOTOS = "/photos.get"
+let VK_GET_NEWSFEED = "/newsfeed.get"
 
 // Realm data base constants
 let USER_GROUP = "user_group"
