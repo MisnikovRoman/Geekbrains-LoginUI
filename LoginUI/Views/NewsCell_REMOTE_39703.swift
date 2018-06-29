@@ -19,15 +19,7 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var repostsLbl: UILabel!
     @IBOutlet weak var viewsLbl: UILabel!
     
-    func setupCell(with item: NewsItem) {
-        avatarLbl.text = "URL: " + item.avatarUrl
-        authorLbl.text = "From: " + item.author
-        let postTime = getTimeToNow(from: item.date)
-        dateLbl.text = postTime
-        textLbl.text = item.body
-        likesLbl.text = "" + String(item.likesCount)
-        repostsLbl.text = "" + String(item.repostsCount)
-        commentsLbl.text = "" + String(item.commentsCount)
-        viewsLbl.text = "" + String(item.viewsCount)
+    func setupCell(with: News) {
+        
     }
 }

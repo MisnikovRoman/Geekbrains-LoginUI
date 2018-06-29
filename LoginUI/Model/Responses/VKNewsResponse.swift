@@ -55,7 +55,7 @@ struct VKNewsResponse: Decodable {
             var comments: VKComment
             var likes: VKLikes
             var reposts: VKReposts
-            var views: VKViews
+            var views: VKViews?
         }
         
         struct VKProfile: Decodable {

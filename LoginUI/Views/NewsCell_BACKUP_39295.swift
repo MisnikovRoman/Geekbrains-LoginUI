@@ -15,8 +15,13 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var textLbl: UILabel!
     @IBOutlet weak var likesLbl: UILabel!
+<<<<<<< HEAD
+    @IBOutlet weak var repostsLbl: UILabel!
+    @IBOutlet weak var commentsLbl: UILabel!
+=======
     @IBOutlet weak var commentsLbl: UILabel!
     @IBOutlet weak var repostsLbl: UILabel!
+>>>>>>> 3dbf34e08d854950652be0b67b320cfd6af8170a
     @IBOutlet weak var viewsLbl: UILabel!
     
     func setupCell(with item: NewsItem) {
@@ -25,9 +30,9 @@ class NewsCell: UITableViewCell {
         let postTime = getTimeToNow(from: item.date)
         dateLbl.text = postTime
         textLbl.text = item.body
-        likesLbl.text = "" + String(item.likesCount)
-        repostsLbl.text = "" + String(item.repostsCount)
-        commentsLbl.text = "" + String(item.commentsCount)
-        viewsLbl.text = "" + String(item.viewsCount)
+        likesLbl.text = "❤️  " + String(item.likesCount)
+        repostsLbl.text = "↩️  " + String(item.repostsCount)
+        commentsLbl.text = "🗣  " + String(item.commentsCount)
+        viewsLbl.text = "👁  " + String(item.viewsCount)
     }
 }

@@ -54,7 +54,7 @@ class NewsItem {
         // reposts count
         self.repostsCount = item.reposts.count
         // views count
-        self.viewsCount = item.views.count
+        self.viewsCount = item.views?.count ?? 0
     }
 }
 
