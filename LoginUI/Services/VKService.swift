@@ -13,6 +13,8 @@ import RealmSwift
 
 class VKService {
     
+    private let queue = DispatchQueue.global(qos: .userInitiated)
+    
     static let instance = VKService()
     
     // MARK: - VK requests
@@ -192,7 +194,6 @@ class VKService {
         }
     }
     
-    //=TEMP====================================================================
     func loadNewsfeed(completion: @escaping NewsComplitionHandler) {
         // get token from user data
         guard let token = UserData.instance.authToken else { return }
@@ -209,24 +210,33 @@ class VKService {
         
         // make requests
         Alamofire.request(url).responseData { (dataResponse) in
-            // check errors
-            guard dataResponse.error == nil else {return}
-            // check status code (200)
-            guard dataResponse.response?.statusCode == 200 else { return }
-            // get data
-            guard let data = dataResponse.value else {return}
-            // parse JSON
-            do {
-                let VKDecoder = JSONDecoder()
-                VKDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                VKDecoder.dateDecodingStrategy = .secondsSince1970
-                
-                let response = try VKDecoder.decode(VKNewsResponse.self, from: data)
-                print("✅ Parcing success")
-                completion(response)
-            } catch let err {
-                print("⚠️ Parcing error:", err, "\nDescription:", err.localizedDescription)
+            
+            self.queue.async {
+                print("🎈🎈🎈", Thread.current)
+                // check errors
+                guard dataResponse.error == nil else {return}
+                // check status code (200)
+                guard dataResponse.response?.statusCode == 200 else { return }
+                // get data
+                guard let data = dataResponse.value else {return}
+                // parse JSON
+                do {
+                    
+                    let VKDecoder = JSONDecoder()
+                    VKDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                    VKDecoder.dateDecodingStrategy = .secondsSince1970
+                    
+                    let response = try VKDecoder.decode(VKNewsResponse.self, from: data)
+                    print("✅ Parcing success")
+                    DispatchQueue.main.async {
+                        completion(response)
+                    }
+                    
+                } catch let err {
+                    print("⚠️ Parcing error:", err, "\nDescription:", err.localizedDescription)
+                }
             }
+            
         }
     }
 }
