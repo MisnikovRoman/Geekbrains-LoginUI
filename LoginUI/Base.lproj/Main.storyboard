@@ -10,7 +10,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -549,10 +548,8 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="leading" secondItem="FDN-uf-IcX" secondAttribute="leadingMargin" id="1qN-Kj-Uv8"/>
                                                 <constraint firstItem="plh-vz-eEs" firstAttribute="top" secondItem="FDN-uf-IcX" secondAttribute="topMargin" id="WTG-bq-sLn"/>
                                                 <constraint firstItem="plh-vz-eEs" firstAttribute="leading" secondItem="FDN-uf-IcX" secondAttribute="leadingMargin" id="YUD-Ly-AS0"/>
-                                                <constraint firstAttribute="top" secondItem="FDN-uf-IcX" secondAttribute="topMargin" id="bUk-2X-X26"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="plh-vz-eEs" secondAttribute="bottom" id="mJt-yg-bHv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="plh-vz-eEs" secondAttribute="trailing" id="sA5-WD-E4a"/>
                                             </constraints>
