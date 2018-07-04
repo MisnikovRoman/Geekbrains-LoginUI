@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsCell: UITableViewCell {
     
-    @IBOutlet weak var avatarLbl: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var authorLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var textLbl: UILabel!
@@ -20,14 +21,18 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var viewsLbl: UILabel!
     
     func setupCell(with item: NewsItem) {
-        avatarLbl.text = "URL: " + item.avatarUrl
-        authorLbl.text = "From: " + item.author
+        
+        let urlString = item.avatarUrl
+        let url = URL(string: urlString)
+        avatarImageView.kf.setImage(with: url)
+        
+        authorLbl.text = item.author
         let postTime = getTimeToNow(from: item.date)
         dateLbl.text = postTime
         textLbl.text = item.body
-        likesLbl.text = "♥︎ " + String(item.likesCount)
-        repostsLbl.text = "⤵︎ " + String(item.repostsCount)
-        commentsLbl.text = "❝ " + String(item.commentsCount)
-        viewsLbl.text = "☉ " + String(item.viewsCount)
+        likesLbl.text = String(item.likesCount)
+        repostsLbl.text = String(item.repostsCount)
+        commentsLbl.text = String(item.commentsCount)
+        viewsLbl.text = String(item.viewsCount)
     }
 }
