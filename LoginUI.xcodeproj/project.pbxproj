@@ -10,6 +10,7 @@
 		A85672FC87B404CB9A2D1D63 /* Pods_LoginUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA52BFC602E51606C786E126 /* Pods_LoginUI.framework */; };
 		C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = C800615820A1E17100CCA6B3 /* UIView-CornerRadius.swift */; };
 		C80087A220BD90DF00769880 /* UIColor-CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */; };
+		C8208D6520EE137200B1DDDB /* StrokeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8208D6420EE137200B1DDDB /* StrokeButton.swift */; };
 		C84B9A1F20A0DF15003D01A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B9A1E20A0DF15003D01A9 /* AppDelegate.swift */; };
 		C84B9A2120A0DF15003D01A9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B9A2020A0DF15003D01A9 /* LoginVC.swift */; };
 		C84B9A2420A0DF15003D01A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2220A0DF15003D01A9 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		B69A2C20BA25E91DC8534DEA /* Pods-LoginUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginUI/Pods-LoginUI.debug.xcconfig"; sourceTree = "<group>"; };
 		C800615820A1E17100CCA6B3 /* UIView-CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-CornerRadius.swift"; sourceTree = "<group>"; };
 		C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-CustomColors.swift"; sourceTree = "<group>"; };
+		C8208D6420EE137200B1DDDB /* StrokeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeButton.swift; sourceTree = "<group>"; };
 		C84B9A1B20A0DF15003D01A9 /* LoginUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84B9A1E20A0DF15003D01A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C84B9A2020A0DF15003D01A9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		C850CE2220B2B55B00418D9E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C8208D6420EE137200B1DDDB /* StrokeButton.swift */,
 				C850CE2320B2B57C00418D9E /* FriendCell.swift */,
 				C850CE2A20B2BC6D00418D9E /* FriendPhotoCell.swift */,
 				C850CE2E20B2BFBA00418D9E /* GroupCell.swift */,
@@ -371,6 +374,7 @@
 				C850CE2720B2B80300418D9E /* FriendsData.swift in Sources */,
 				C8F1026B20E5161300670ABC /* NewsItem.swift in Sources */,
 				C8C810C120A983F100145B83 /* UserGroupsVC.swift in Sources */,
+				C8208D6520EE137200B1DDDB /* StrokeButton.swift in Sources */,
 				C89AAFD020A5A48A00E3BC93 /* FriendPhotosVC.swift in Sources */,
 				C88067D020C85C210066C28A /* VKRepository.swift in Sources */,
 				C8D84A2320E2C0FB00A6532F /* NewsVC.swift in Sources */,

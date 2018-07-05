@@ -13,6 +13,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="WuS-Wp-td1">
+            <objects>
+                <viewController id="49L-6X-kbJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jdl-xq-d7E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginbg" translatesAutoresizingMaskIntoConstraints="NO" id="Bck-31-kiD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USU-SZ-BMf" customClass="StrokeButton" customModule="LoginUI" customModuleProvider="target">
+                                <rect key="frame" x="46" y="565" width="283" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="283" id="GCy-4i-5Ym"/>
+                                    <constraint firstAttribute="height" constant="54" id="L3c-Vc-xaP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="    войти с помощью VK" image="vk_white"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jDb-fX-QXg">
+                                <rect key="frame" x="24" y="188.5" width="327" height="210"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verification" translatesAutoresizingMaskIntoConstraints="NO" id="c86-5x-xnP">
+                                        <rect key="frame" x="93.5" y="0.0" width="140" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Vs9-Tf-NEe"/>
+                                            <constraint firstAttribute="width" constant="140" id="qd5-7A-hKG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для использования программы необходимо зарегистрироваться" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OWw-ef-5hn">
+                                        <rect key="frame" x="0.0" y="120" width="327" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="SQK-Z6-tij"/>
+                                            <constraint firstAttribute="width" constant="327" id="hLD-uH-Q9D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jDb-fX-QXg" firstAttribute="centerX" secondItem="jdl-xq-d7E" secondAttribute="centerX" id="0uL-nz-YHF"/>
+                            <constraint firstItem="USU-SZ-BMf" firstAttribute="centerX" secondItem="jdl-xq-d7E" secondAttribute="centerX" id="JqB-uN-TS3"/>
+                            <constraint firstItem="hQf-zg-NZs" firstAttribute="bottom" secondItem="USU-SZ-BMf" secondAttribute="bottom" constant="48" id="Qb2-0F-mOg"/>
+                            <constraint firstItem="jDb-fX-QXg" firstAttribute="centerY" secondItem="jdl-xq-d7E" secondAttribute="centerY" constant="-40" id="wB9-5b-hjt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hQf-zg-NZs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0O0-dS-sfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714" y="-188"/>
+        </scene>
         <!--LoginVC-->
         <scene sceneID="gLN-ZB-EC7">
             <objects>
@@ -965,10 +1024,13 @@
         <image name="eye" width="24" height="24"/>
         <image name="friend-icon" width="24" height="24"/>
         <image name="like" width="64" height="64"/>
+        <image name="loginbg" width="375" height="667"/>
         <image name="news" width="24" height="24"/>
         <image name="reload" width="64" height="64"/>
         <image name="social-icons" width="150" height="50"/>
         <image name="team-icon" width="24" height="24"/>
+        <image name="verification" width="512" height="512"/>
         <image name="vk" width="256" height="256"/>
+        <image name="vk_white" width="24" height="24"/>
     </resources>
 </document>
