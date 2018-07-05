@@ -87,7 +87,7 @@ extension WebVC: WKNavigationDelegate {
             style: .cancel) { (action) in
                 // go to login page
                 self.dismiss(animated: true, completion: nil)
-        }
+            }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
         
