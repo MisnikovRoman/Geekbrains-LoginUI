@@ -22,9 +22,9 @@ func getTimeToNow(from date: Date) -> String {
     if backHours != 0 {
         result += "\(backHours) час"
         switch backHours {
-        case 1: result += ""
-        case 2...4 : result += "а"
-        default: result += "ов"
+        case 1: result += " "
+        case 2...4 : result += "а "
+        default: result += "ов "
         }
     }
     result += "\(backMinutes) минут"
@@ -34,7 +34,7 @@ func getTimeToNow(from date: Date) -> String {
     // 1, 21, 31, 41, 51
     if backMinutesLastSign == 1 && backMinutesTensCount != 1 { result += "у" }
     // 2 3 4 22 23 24 32 33 34 ...
-    if (backMinutesLastSign >= 2 && backMinutesLastSign <= 4) || (backMinutesTensCount >= 2 && backMinutesTensCount <= 5) { result += "ы" }
+    if (backMinutesLastSign >= 2 && backMinutesLastSign <= 4) && (backMinutesTensCount == 0 || (backMinutesTensCount >= 2 && backMinutesTensCount <= 5)) { result += "ы" }
     
     return result + " назад"
 }
