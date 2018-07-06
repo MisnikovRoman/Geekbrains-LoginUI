@@ -27,7 +27,7 @@ class UserData {
         }
 
         set {
-            print("User \"admin\" status is: \(newValue)")
+            print("🎪 User \"admin\" status is: \(newValue)")
             // when someone wants to change logged status we write data to data base
             defaults.set(newValue, forKey: LOGGED_IN_KEY)
             defaults.synchronize()

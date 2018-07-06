@@ -40,6 +40,7 @@
 		C8D84A2320E2C0FB00A6532F /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2220E2C0FB00A6532F /* NewsVC.swift */; };
 		C8D84A2520E2C23600A6532F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2420E2C23600A6532F /* NewsCell.swift */; };
 		C8D84A2720E2C3B400A6532F /* VKNewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D84A2620E2C3B400A6532F /* VKNewsResponse.swift */; };
+		C8D8579B20EF698A001FD71E /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D8579A20EF698A001FD71E /* RootVC.swift */; };
 		C8F1026B20E5161300670ABC /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1026A20E5161300670ABC /* NewsItem.swift */; };
 		C8F1026D20E5166A00670ABC /* OtherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1026C20E5166A00670ABC /* OtherFunctions.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		C8D84A2220E2C0FB00A6532F /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		C8D84A2420E2C23600A6532F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		C8D84A2620E2C3B400A6532F /* VKNewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKNewsResponse.swift; sourceTree = "<group>"; };
+		C8D8579A20EF698A001FD71E /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		C8F1026A20E5161300670ABC /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		C8F1026C20E5166A00670ABC /* OtherFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,13 +196,9 @@
 		C87D212620A58FA600C5A830 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C84B9A2020A0DF15003D01A9 /* LoginVC.swift */,
-				C856B5C520BAC65000BD75B2 /* WebVC.swift */,
-				C89AAFCD20A5A47300E3BC93 /* UserFriendsVC.swift */,
-				C89AAFCF20A5A48A00E3BC93 /* FriendPhotosVC.swift */,
-				C8C810C020A983F100145B83 /* UserGroupsVC.swift */,
-				C8C810C220A9841100145B83 /* GroupSearchVC.swift */,
-				C8D84A2220E2C0FB00A6532F /* NewsVC.swift */,
+				C8D8579A20EF698A001FD71E /* RootVC.swift */,
+				C8D8579C20EF6997001FD71E /* Login */,
+				C8D8579D20EF69A1001FD71E /* Main */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +219,27 @@
 				C8CB2F4020BC340800DB9E96 /* VKService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C8D8579C20EF6997001FD71E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C84B9A2020A0DF15003D01A9 /* LoginVC.swift */,
+				C856B5C520BAC65000BD75B2 /* WebVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C8D8579D20EF69A1001FD71E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C89AAFCD20A5A47300E3BC93 /* UserFriendsVC.swift */,
+				C89AAFCF20A5A48A00E3BC93 /* FriendPhotosVC.swift */,
+				C8C810C020A983F100145B83 /* UserGroupsVC.swift */,
+				C8C810C220A9841100145B83 /* GroupSearchVC.swift */,
+				C8D84A2220E2C0FB00A6532F /* NewsVC.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		C8F1026920E515EA00670ABC /* Responses */ = {
@@ -371,6 +390,7 @@
 				C8D84A2520E2C23600A6532F /* NewsCell.swift in Sources */,
 				C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */,
 				C89AAFCE20A5A47300E3BC93 /* UserFriendsVC.swift in Sources */,
+				C8D8579B20EF698A001FD71E /* RootVC.swift in Sources */,
 				C850CE2720B2B80300418D9E /* FriendsData.swift in Sources */,
 				C8F1026B20E5161300670ABC /* NewsItem.swift in Sources */,
 				C8C810C120A983F100145B83 /* UserGroupsVC.swift in Sources */,

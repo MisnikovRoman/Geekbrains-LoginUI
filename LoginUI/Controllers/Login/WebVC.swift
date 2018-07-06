@@ -84,9 +84,10 @@ extension WebVC: WKNavigationDelegate {
             preferredStyle: .alert)
         let action = UIAlertAction(
             title: "Продолжить",
-            style: .cancel) { (action) in
+            style: .cancel) { [weak self] (action) in
                 // go to login page
-                self.dismiss(animated: true, completion: nil)
+                UserData.instance.isLoggedIn = true
+                self?.performSegue(withIdentifier: UNWIND_TO_ROOT, sender: nil)
             }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)

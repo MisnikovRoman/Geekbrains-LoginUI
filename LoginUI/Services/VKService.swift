@@ -19,9 +19,37 @@ class VKService {
     
     // MARK: - VK requests
     
-    /**
-     Загрузить список друзей с параметрами
-     */
+    // проверка auth token
+    func checkAuthToken(completion: @escaping loadDataComplitionHandler) {
+        // if token doesn't exist
+        guard let token = UserData.instance.authToken else { completion(false); return }
+        // get status data form vk to test auth
+        
+        // create url
+        var urlWithParams = URLComponents(string: URL_VK_API_BASE + VK_GET_NEWSFEED)
+        urlWithParams?.queryItems = [
+            URLQueryItem(name: "user_id", value: "1"),
+            URLQueryItem(name: "count", value: "50"),
+            URLQueryItem(name: "v", value: "5.78"),
+            URLQueryItem(name: "access_token", value: token)
+        ]
+        guard let url = urlWithParams?.url else { completion(false); return }
+        
+        Alamofire.request(url).responseJSON(queue: .global()) { (response) in
+            // check errors
+            guard response.error == nil else { completion(false); return }
+            // check status code (200)
+            guard response.response?.statusCode == 200 else { completion(false); return }
+            // get json
+            guard let json = response.value as? [String: Any] else { completion(false); return }
+            // get status
+            guard let _ = json["response"] as? [String: Any] else { completion(false); return }
+            // in this step all is OK
+            completion(true)
+        }
+    }
+    
+    // загрузить список друзей с параметрами
     func loadFriends(completion: @escaping loadDataComplitionHandler) {
         
         // get token from user data
@@ -194,6 +222,7 @@ class VKService {
         }
     }
     
+    // получение новостной ленты
     func loadNewsfeed(completion: @escaping NewsComplitionHandler) {
         // get token from user data
         guard let token = UserData.instance.authToken else { return }
@@ -239,6 +268,7 @@ class VKService {
             
         }
     }
+
 }
 
 

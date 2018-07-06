@@ -18,6 +18,9 @@ class UserFriendsVC: UITableViewController {
         super.viewDidLoad()
         loadDataFromServer()
         
+        // for testing
+        // UserData.instance.isLoggedIn = false
+        
     }
     
     func loadDataFromServer() {
@@ -31,16 +34,16 @@ class UserFriendsVC: UITableViewController {
     }
     
     // IBActions
-    @IBAction func backToLoginVC(_ sender: Any) {
-        print("-> Try to move back")
-        
-        // switchRootViewController(rootViewController: LoginVC, animated: true) {
-        //     print("-> Successfully changed root VC to LoginVC")
-        // }
-        
+    @IBAction func logoutBtnTap(_ sender: UIBarButtonItem) {
         UserData.instance.isLoggedIn = false
-        
+        dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func testBtnTap(_ sender: UIBarButtonItem) {
+        UserData.instance.isLoggedIn = false
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let photosVC = segue.destination as? FriendPhotosVC {

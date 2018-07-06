@@ -19,11 +19,6 @@ class LoginVC: UIViewController {
     // MARK: - Main methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        let defaults = UserDefaults.standard
-        defaults.bool(forKey: LOGGED_IN_KEY)
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {

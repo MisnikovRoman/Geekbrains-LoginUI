@@ -27,6 +27,9 @@ let TABBAR_SEGUE = "TabBarSegue"
 let UNWIND_TO_LOGIN = "BackToLoginVC"
 let UNWIND_TO_GROUPES = "BackToGroups"
 let PHOTOS_SEGUE = "ToFriendPhotos"
+let LOGIN_SEGUE = "RootToLogin"
+let MAIN_SEGUE = "RootToMain"
+let UNWIND_TO_ROOT = "UnwindToRoot"
 
 // user date constants
 let LOGGED_IN_KEY = "loggedIn"
