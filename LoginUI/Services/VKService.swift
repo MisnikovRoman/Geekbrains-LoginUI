@@ -67,7 +67,7 @@ class VKService {
         guard let url = urlWithParams?.url else { return }
         
         // make request
-        Alamofire.request(url).responseData { (response) in
+        Alamofire.request(url).responseData(queue: .global()) { (response) in
 
             // check errors
             guard response.error == nil else {return}
@@ -110,7 +110,7 @@ class VKService {
         guard let url = urlWithParams?.url else { return }
         
         // make request
-        Alamofire.request(url).responseData { (response) in
+        Alamofire.request(url).responseData(queue: .global()) { (response) in
             
             // check errors
             guard response.error == nil else {return}
@@ -156,7 +156,7 @@ class VKService {
         guard let url = urlWithParams?.url else { return }
         
         // make request
-        Alamofire.request(url).responseData{ (response) in
+        Alamofire.request(url).responseData(queue: .global()) { (response) in
             // check errors
             guard response.error == nil else {return}
             // check status code (200)
@@ -200,7 +200,7 @@ class VKService {
         guard let url = urlWithParams?.url else { return }
         
         // make requests
-        Alamofire.request(url).responseData{ (response) in
+        Alamofire.request(url).responseData(queue: .global()) { (response) in
             // check errors
             guard response.error == nil else {return}
             // check status code (200)
@@ -238,7 +238,7 @@ class VKService {
         guard let url = urlWithParams?.url else { return }
         
         // make requests
-        Alamofire.request(url).responseData { (dataResponse) in
+        Alamofire.request(url).responseData(queue: .global()) { (dataResponse) in
             
             self.queue.async {
                 print("🎈🎈🎈", Thread.current)
