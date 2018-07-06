@@ -33,16 +33,30 @@ class NewsVC: UIViewController {
     
     func loadNewsfeed() {
         VKService.instance.loadNewsfeed { (vkNewsfeedResponse) in
-            for vkNewsItem in vkNewsfeedResponse.response.items {
-                let newsItem = NewsItem(with: vkNewsItem, from: vkNewsfeedResponse)
-                self.newsfeed.append(newsItem)
+           DispatchQueue.main.async {
+                for vkNewsItem in vkNewsfeedResponse.response.items {
+                    let newsItem = NewsItem(with: vkNewsItem, from: vkNewsfeedResponse)
+                    self.newsfeed.append(newsItem)
+                }
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         }
-        
     }
     
     // @IBActions
+    @IBAction func logoutBtnTapped(_ sender: UIBarButtonItem) {
+        // create exit confirmation alert controller
+        let alert = UIAlertController(title: "", message: "Вы уверены что хотите выйти из своей учетной записи?", preferredStyle: .actionSheet)
+        let confirmAction = UIAlertAction(title: "Подтвердить", style: .default) { (action) in
+            UserData.instance.isLoggedIn = false
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension NewsVC: UITableViewDelegate {

@@ -18,16 +18,30 @@ class UserGroupsVC: UITableViewController {
 
     func loadVkGroupsData() {
         VKService.instance.loadUserGroups { (success) in
-            
-            if success {
-                // table view reload data
-                self.tableView.reloadData()
-            } else {
-                // show error
-                simpleAlert(title: "Внимание", message: "Группы пользователя не были загружены", vc: self)
+            DispatchQueue.main.async {
+                if success {
+                    // table view reload data
+                    self.tableView.reloadData()
+                } else {
+                    // show error
+                    simpleAlert(title: "Внимание", message: "Группы пользователя не были загружены", vc: self)
+                }
             }
-            
         }
+    }
+    
+    @IBAction func logoutBtnTapped(_ sender: UIBarButtonItem) {
+        // create exit confirmation alert controller
+        let alert = UIAlertController(title: "", message: "Вы уверены что хотите выйти из своей учетной записи?", preferredStyle: .actionSheet)
+        let confirmAction = UIAlertAction(title: "Подтвердить", style: .default) { (action) in
+            UserData.instance.isLoggedIn = false
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     // TODO: - ⚠️ add segue to start screen

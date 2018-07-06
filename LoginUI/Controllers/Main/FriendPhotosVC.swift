@@ -29,14 +29,16 @@ class FriendPhotosVC: UICollectionViewController {
         guard id > 0 else { return }
         
         VKService.instance.loadUserPhotos(id: userID, size: VkImagesSize.photo100) { (success) in
-            if success {
-                self.collectionView?.reloadData()
-            } else {
-                simpleAlert(title: "Внимание", message: "Ошибка загрузки данных пользователя", vc: self)
+            DispatchQueue.main.async {
+                if success {
+                    self.collectionView?.reloadData()
+                } else {
+                    simpleAlert(title: "Внимание", message: "Ошибка загрузки данных пользователя", vc: self)
+                }
             }
         }
     }
-    
+     
     deinit {
         print(#function)
         PhotosData.instance.photos = []

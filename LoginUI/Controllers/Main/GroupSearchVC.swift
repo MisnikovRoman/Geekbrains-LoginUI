@@ -25,10 +25,12 @@ class GroupSearchVC: UITableViewController {
         
         // make search request
         VKService.instance.loadGroupsBySearch(searchText: text) { (success) in
-            if success {
-                self.tableView.reloadData()
-            } else {
-                simpleAlert(title: "Внимание", message: "Невозможно осуществить поиск по группам", vc: self)
+            DispatchQueue.main.async {
+                if success {
+                    self.tableView.reloadData()
+                } else {
+                    simpleAlert(title: "Внимание", message: "Невозможно осуществить поиск по группам", vc: self)
+                }
             }
         }
     }

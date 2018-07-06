@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O0-dS-sfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="-2015"/>
+            <point key="canvasLocation" x="937" y="-997"/>
         </scene>
         <!--RootVC-->
         <scene sceneID="29W-wz-b3t">
@@ -82,24 +82,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cgb-Jf-DMT">
-                                <rect key="frame" x="137" y="292.5" width="101" height="82"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cgb-Jf-DMT">
+                                <rect key="frame" x="111" y="443" width="153" height="37"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qGN-Qr-6cd">
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                                    </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhm-bu-OG6">
-                                        <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                        <rect key="frame" x="52" y="3.5" width="101" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qGN-Qr-6cd">
-                                        <rect key="frame" x="32" y="45" width="37" height="37"/>
-                                    </activityIndicatorView>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk-large" translatesAutoresizingMaskIntoConstraints="NO" id="xGN-3A-ov2">
+                                <rect key="frame" x="123" y="141.5" width="128" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.32271544537714841" green="0.35314891145874461" blue="0.44495558375634514" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="cgb-Jf-DMT" firstAttribute="centerY" secondItem="1Mo-eC-EpE" secondAttribute="centerY" id="4wF-19-ZK0"/>
+                            <constraint firstItem="cgb-Jf-DMT" firstAttribute="centerY" secondItem="1Mo-eC-EpE" secondAttribute="centerY" constant="128" id="4wF-19-ZK0"/>
+                            <constraint firstItem="xGN-3A-ov2" firstAttribute="centerY" secondItem="1Mo-eC-EpE" secondAttribute="centerY" constant="-128" id="Ig1-kF-sPO"/>
+                            <constraint firstItem="xGN-3A-ov2" firstAttribute="centerX" secondItem="1Mo-eC-EpE" secondAttribute="centerX" id="aPC-7P-TFK"/>
                             <constraint firstItem="cgb-Jf-DMT" firstAttribute="centerX" secondItem="1Mo-eC-EpE" secondAttribute="centerX" id="yvo-fu-wnr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n06-Cd-Dc2"/>
@@ -112,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bcy-vx-zh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346.39999999999998" y="-2015.4422788605698"/>
+            <point key="canvasLocation" x="157.59999999999999" y="-188.45577211394306"/>
         </scene>
         <!--WebVC-->
         <scene sceneID="Olg-gi-zEo">
@@ -155,7 +160,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIl-N1-LOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fof-40-L1A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3070" y="-2015"/>
+            <point key="canvasLocation" x="2430" y="-997"/>
         </scene>
         <!--Friends-->
         <scene sceneID="nbJ-yj-ilP">
@@ -234,31 +239,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="b7d-pY-16x">
-                        <barButtonItem key="leftBarButtonItem" title="❌ Logout" id="Pa4-0o-Qjj">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="Pa4-0o-Qjj">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="newColor">
                                     <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="logoutBtnTap:" destination="u7d-Yi-9fF" id="VwJ-c2-acH"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Photos" id="PoG-Wp-AtX">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="newColor">
-                                    <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="testBtnTap:" destination="u7d-Yi-9fF" id="95c-cO-Tf6"/>
+                                <action selector="logoutBtnTapped:" destination="u7d-Yi-9fF" id="iIF-gL-H4B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4K-x1-2U8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="-186.65667166416793"/>
+            <point key="canvasLocation" x="2430" y="586"/>
         </scene>
         <!--TabBarController-->
         <scene sceneID="hdO-KB-8wl">
@@ -285,7 +280,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3X-VZ-TNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="-186"/>
+            <point key="canvasLocation" x="937" y="-187"/>
         </scene>
         <!--News-->
         <scene sceneID="19G-Aj-20t">
@@ -457,14 +452,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7iW-dc-uGC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="News" id="18Z-8D-U6x"/>
+                    <navigationItem key="navigationItem" title="News" id="18Z-8D-U6x">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="wkz-KU-e4M">
+                            <connections>
+                                <action selector="logoutBtnTapped:" destination="2ea-wm-Kbq" id="XiP-w9-IKl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ZbH-zq-rn5" id="Jur-xM-HvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drK-Gf-Z2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3069.5999999999999" y="-997.15142428785612"/>
+            <point key="canvasLocation" x="2430" y="-188"/>
         </scene>
         <!--Friends-->
         <scene sceneID="zjH-8Y-4ot">
@@ -488,7 +489,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8a-mv-bXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2120.8000000000002" y="-185.75712143928038"/>
+            <point key="canvasLocation" x="1684" y="586"/>
         </scene>
         <!--Groups-->
         <scene sceneID="ebh-Fb-kVh">
@@ -512,7 +513,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGk-Ka-iPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="615"/>
+            <point key="canvasLocation" x="1690" y="1340"/>
         </scene>
         <!--Groups-->
         <scene sceneID="AcJ-GD-dXM">
@@ -593,15 +594,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Groups" id="SJU-g0-b1G">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Ehb-OY-bnJ">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="newColor">
-                                    <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="kfr-P5-qVZ">
                             <connections>
-                                <action selector="backToLoginVC:" destination="u7d-Yi-9fF" id="HW6-BM-C7q"/>
-                                <segue destination="Y48-iO-pA2" kind="unwind" unwindAction="unwindToLoginVC:" id="NIe-zC-Zd7"/>
+                                <action selector="logoutBtnTapped:" destination="p0M-bj-G4l" id="6pI-xV-EHu"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qD5-Bd-AL5">
@@ -617,9 +612,8 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiR-2y-Csx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Y48-iO-pA2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3070" y="615"/>
+            <point key="canvasLocation" x="2436" y="1340"/>
         </scene>
         <!--Search groups-->
         <scene sceneID="kmA-fL-JH2">
@@ -726,7 +720,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4u-gn-pvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jQy-6K-Cb1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3998" y="615"/>
+            <point key="canvasLocation" x="3167" y="1338"/>
         </scene>
         <!--Friends photos-->
         <scene sceneID="nH0-vY-sTW">
@@ -776,7 +770,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROy-nv-hy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3988" y="-187.55622188905548"/>
+            <point key="canvasLocation" x="3161" y="585"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OT3-EC-GC0">
@@ -794,7 +788,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZp-xb-sh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="-2015"/>
+            <point key="canvasLocation" x="1684" y="-997"/>
         </scene>
         <!--News-->
         <scene sceneID="yoO-3b-FQy">
@@ -807,13 +801,18 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backBtnColor">
+                            <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="2ea-wm-Kbq" kind="relationship" relationship="rootViewController" id="ZdM-D0-zQM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLc-9g-LU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="-998"/>
+            <point key="canvasLocation" x="1684" y="-187"/>
         </scene>
     </scenes>
     <resources>
@@ -823,10 +822,12 @@
         <image name="friend-icon" width="24" height="24"/>
         <image name="like" width="64" height="64"/>
         <image name="loginbg" width="375" height="667"/>
+        <image name="logout" width="27" height="25"/>
         <image name="news" width="24" height="24"/>
         <image name="reload" width="64" height="64"/>
         <image name="team-icon" width="24" height="24"/>
         <image name="verification" width="512" height="512"/>
+        <image name="vk-large" width="128" height="128"/>
         <image name="vk_white" width="24" height="24"/>
     </resources>
 </document>

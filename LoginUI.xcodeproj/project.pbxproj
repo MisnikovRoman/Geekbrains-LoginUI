@@ -11,10 +11,9 @@
 		C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = C800615820A1E17100CCA6B3 /* UIView-CornerRadius.swift */; };
 		C80087A220BD90DF00769880 /* UIColor-CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */; };
 		C8208D6520EE137200B1DDDB /* StrokeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8208D6420EE137200B1DDDB /* StrokeButton.swift */; };
+		C83EC2BE20EF9273008FC8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83EC2BD20EF9273008FC8FD /* Assets.xcassets */; };
 		C84B9A1F20A0DF15003D01A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B9A1E20A0DF15003D01A9 /* AppDelegate.swift */; };
-		C84B9A2120A0DF15003D01A9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B9A2020A0DF15003D01A9 /* LoginVC.swift */; };
 		C84B9A2420A0DF15003D01A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2220A0DF15003D01A9 /* Main.storyboard */; };
-		C84B9A2620A0DF16003D01A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2520A0DF16003D01A9 /* Assets.xcassets */; };
 		C84B9A2920A0DF16003D01A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84B9A2720A0DF16003D01A9 /* LaunchScreen.storyboard */; };
 		C850CE2420B2B57C00418D9E /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850CE2320B2B57C00418D9E /* FriendCell.swift */; };
 		C850CE2720B2B80300418D9E /* FriendsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850CE2620B2B80300418D9E /* FriendsData.swift */; };
@@ -52,11 +51,10 @@
 		C800615820A1E17100CCA6B3 /* UIView-CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-CornerRadius.swift"; sourceTree = "<group>"; };
 		C80087A120BD90DF00769880 /* UIColor-CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-CustomColors.swift"; sourceTree = "<group>"; };
 		C8208D6420EE137200B1DDDB /* StrokeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeButton.swift; sourceTree = "<group>"; };
+		C83EC2BD20EF9273008FC8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84B9A1B20A0DF15003D01A9 /* LoginUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84B9A1E20A0DF15003D01A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C84B9A2020A0DF15003D01A9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C84B9A2320A0DF15003D01A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C84B9A2520A0DF16003D01A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84B9A2820A0DF16003D01A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C84B9A2A20A0DF16003D01A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C850CE2320B2B57C00418D9E /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
@@ -160,8 +158,8 @@
 				C8CB2F3F20BC33EF00DB9E96 /* Services */,
 				C800615720A1E12600CCA6B3 /* Extensions */,
 				C87D212720A58FE700C5A830 /* Other */,
-				C84B9A2520A0DF16003D01A9 /* Assets.xcassets */,
 				C84B9A2A20A0DF16003D01A9 /* Info.plist */,
+				C83EC2BD20EF9273008FC8FD /* Assets.xcassets */,
 			);
 			path = LoginUI;
 			sourceTree = "<group>";
@@ -224,7 +222,6 @@
 		C8D8579C20EF6997001FD71E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				C84B9A2020A0DF15003D01A9 /* LoginVC.swift */,
 				C856B5C520BAC65000BD75B2 /* WebVC.swift */,
 			);
 			path = Login;
@@ -312,7 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84B9A2920A0DF16003D01A9 /* LaunchScreen.storyboard in Resources */,
-				C84B9A2620A0DF16003D01A9 /* Assets.xcassets in Resources */,
+				C83EC2BE20EF9273008FC8FD /* Assets.xcassets in Resources */,
 				C84B9A2420A0DF15003D01A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,7 +383,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84B9A2120A0DF15003D01A9 /* LoginVC.swift in Sources */,
 				C8D84A2520E2C23600A6532F /* NewsCell.swift in Sources */,
 				C800615920A1E17100CCA6B3 /* UIView-CornerRadius.swift in Sources */,
 				C89AAFCE20A5A47300E3BC93 /* UserFriendsVC.swift in Sources */,
