@@ -31,7 +31,7 @@ struct VKNewsResponse: Decodable {
                     var sizes: [VKSize]
                     var text: String
                     var date: Date
-                    var accessKey: String
+                    var accessKey: String?
                 }
                 
                 var type: String

@@ -250,6 +250,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="R2V-Q5-bFa" kind="show" identifier="ToFriendPhotos" id="fXF-dq-xR5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4K-x1-2U8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

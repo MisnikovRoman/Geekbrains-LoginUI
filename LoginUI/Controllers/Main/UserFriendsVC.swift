@@ -53,7 +53,6 @@ class UserFriendsVC: UITableViewController {
             photosVC.userID = selectedUserID
         }
     }
-
 }
 
 
